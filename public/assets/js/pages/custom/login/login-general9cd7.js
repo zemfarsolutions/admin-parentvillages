@@ -56,7 +56,6 @@ var KTLogin = function() {
 
 				var email = $("#l_email").val();
 				var password = $("#l_password").val();
-				var type = $('input[name="l_radio"]:checked').val();
 				var token = $("#l_token").val();
 
 				console.log(token);
@@ -69,7 +68,6 @@ var KTLogin = function() {
 						data:{
 							email: email,
 							password: password,
-							type: type,
 							_token: token
 						},
 						success: function(response) {
@@ -86,12 +84,7 @@ var KTLogin = function() {
 								}).then(function(result) {
 	
 									if (result.isConfirmed) {
-	
-										if (response.type == "client") {
-											window.location.href = "/client/dashboard";
-										}else{
-											window.location.href = "/employee/dashboard";
-										}
+										window.location.href = "/";
 									}
 	
 									KTUtil.scrollTop();

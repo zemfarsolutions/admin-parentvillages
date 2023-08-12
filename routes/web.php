@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/register', [AuthController::class, 'store']);
+Route::post('/check', [AuthController::class, 'check']);
+Route::post('/logout', [AuthController::class, 'destroy']);
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/', function () {
+        return view('dashboard');
+    });
+
+    Route::resource('/users', UserController::class);
+    Route::resource('/employees', EmployeeController::class);
 });
