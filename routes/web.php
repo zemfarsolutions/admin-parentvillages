@@ -1,9 +1,15 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    EmployeeController,
+    MileageLogController,
+    TimeTrackingController,
+    UserController,
+    ReceiptController,
+    ExpenseController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +35,15 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/users', UserController::class);
     Route::resource('/employees', EmployeeController::class);
+
+    Route::resource('/time-trackings', TimeTrackingController::class)->except(['destroy']);
+    Route::post('/time-trackings/delete/{time_tracking}', [TimeTrackingController::class, 'destroy']);
+
+    Route::resource('/mileage-logs', MileageLogController::class)->except(['destroy']);
+    Route::post('/mileage-logs/delete/{mileage_log}', [MileageLogController::class, 'destroy']);
+
+    Route::resource('/receipts', ReceiptController::class)->except(['destroy']);
+    Route::post('/receipts/delete/{receipt}', [ReceiptController::class, 'destroy']);
+
+    Route::resource('/expenses', ExpenseController::class)->except(['destroy']);
 });
