@@ -462,16 +462,16 @@
                                     <ul class="menu-subnav">
                                         <li class="menu-item {{ gettype(strpos(url()->full(), '/expenses/create')) == 'integer' ? 'menu-item-active' : null }}"
                                             aria-haspopup="true">
-                                            <a href="/employee/expenses/create" class="menu-link">
+                                            <a href="/expenses/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
                                                 <span class="menu-text">Add Receipt</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/employee/expenses')) == 'integer' ? 'menu-item-active' : null }}"
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/expenses')) == 'integer' ? 'menu-item-active' : null }}"
                                             aria-haspopup="true">
-                                            <a href="/employee/expenses" class="menu-link">
+                                            <a href="/expenses" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
@@ -544,29 +544,54 @@
                                 <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                             </li>
 
-                            <li class="menu-item {{ gettype(strpos(url()->full(), '/client/intake-form')) == 'integer' ? 'menu-item-active' : null }}"
-                                aria-haspopup="true">
-                                <a href="/client/intake-form" class="menu-link">
+                            <li class="menu-item menu-item-submenu {{ gettype(strpos(url()->full(), '/intakes')) == 'integer' ? 'menu-item-open' : null }}"
+                                aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="javascript:;" class="menu-link menu-toggle">
                                     <span class="svg-icon menu-icon">
-                                        <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/PenAndRuller.svg-->
+                                        <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Files/Upload.svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                             viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24">
-                                                </rect>
+                                                <rect x="0" y="0" width="24" height="24" />
                                                 <path
-                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
-                                                    fill="#000000" opacity="0.3"></path>
+                                                    d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z"
+                                                    fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                <rect fill="#000000" opacity="0.3" x="11" y="2"
+                                                    width="2" height="14" rx="1" />
                                                 <path
-                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
-                                                    fill="#000000"></path>
+                                                    d="M12.0362375,3.37797611 L7.70710678,7.70710678 C7.31658249,8.09763107 6.68341751,8.09763107 6.29289322,7.70710678 C5.90236893,7.31658249 5.90236893,6.68341751 6.29289322,6.29289322 L11.2928932,1.29289322 C11.6689749,0.916811528 12.2736364,0.900910387 12.6689647,1.25670585 L17.6689647,5.75670585 C18.0794748,6.12616487 18.1127532,6.75845471 17.7432941,7.16896473 C17.3738351,7.57947475 16.7415453,7.61275317 16.3310353,7.24329415 L12.0362375,3.37797611 Z"
+                                                    fill="#000000" fill-rule="nonzero" />
                                             </g>
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
                                     <span class="menu-text">Intake Form</span>
+                                    <i class="menu-arrow"></i>
                                 </a>
+                                <div class="menu-submenu">
+                                    <i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/intakes/create')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/intakes/create" class="menu-link">
+                                                <i class="menu-bullet menu-bullet-dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="menu-text">New Intake</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/intakes')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/intakes" class="menu-link">
+                                                <i class="menu-bullet menu-bullet-dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="menu-text">View Intakes</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
@@ -596,37 +621,18 @@
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/image-input.html" class="menu-link">
+                                            <a href="/client-documents" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">Image Input</span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/dropzonejs.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">DropzoneJS</span>
-                                                <span class="menu-label">
-                                                    <span class="label label-danger label-inline">new</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/uppy.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">Uppy</span>
+                                                <span class="menu-text">View Files</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="/client/dashboard" class="menu-link">
+                                <a href="/appointments" class="menu-link">
                                     <span class="svg-icon menu-icon">
                                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg"

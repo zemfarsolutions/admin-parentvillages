@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Expenses')
+@section('title', 'Intakes')
 
 @section('content')
     <!--begin::Subheader-->
@@ -9,14 +9,14 @@
             <!--begin::Details-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Expenses</h5>
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Intakes</h5>
                 <!--end::Title-->
                 <!--begin::Separator-->
                 <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
                 <!--end::Separator-->
                 <!--begin::Search Form-->
                 <div class="d-flex align-items-center" id="kt_subheader_search">
-                    <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ $total_expenses }} Total</span>
+                    <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ $total_records }} Total</span>
                     <form class="ml-5">
                         <div class="input-group input-group-sm input-group-solid" style="max-width: 175px">
                             <input type="text" class="form-control" id="kt_subheader_search_form"
@@ -71,13 +71,13 @@
                 <!--begin::Header-->
                 <div class="card-header flex-wrap border-0 pt-6 pb-0">
                     <div class="card-title">
-                        <h3 class="card-label">Expense Management
-                            <span class="d-block text-muted pt-2 font-size-sm">Expense management made easy</span>
+                        <h3 class="card-label">Intake Management
+                            <span class="d-block text-muted pt-2 font-size-sm">Intake management made easy</span>
                         </h3>
                     </div>
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="/expenses/create" class="btn btn-primary font-weight-bolder">
+                        <a href="/intakes/create" class="btn btn-primary font-weight-bolder">
                             <span class="svg-icon svg-icon-md">
                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -92,7 +92,7 @@
                                 </svg>
                                 <!--end::Svg Icon-->
                             </span>
-                            New Expense
+                            New Intake
                         </a>
                         <!--end::Button-->
                     </div>
@@ -114,5 +114,5 @@
 @endsection
 
 @section('scripts')
-    <script src="/assets/js/pages/custom/expenses/index.js"></script>
+    <script src="/assets/js/pages/custom/intakes/index.js"></script>
 @endsection

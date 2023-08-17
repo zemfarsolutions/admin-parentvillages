@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/time-trackings/delete/*',
         '/mileage-logs/delete/*',
-        '/receipts/delete/*'
+        '/receipts/delete/*',
+        '/expenses/delete/*',
     ];
 }

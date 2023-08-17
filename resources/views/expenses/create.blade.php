@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Add Receipt')
+@section('title', 'Add Expense')
 
 @section('content')
     <!--begin::Subheader-->
@@ -11,12 +11,12 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">Receipts</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Expenses</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Add Receipt</a>
+                            <a href="#" class="text-muted">Add Expense</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -27,7 +27,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/receipts" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
+                <a href="/expenses" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -43,10 +43,10 @@
                     <!--begin::Card-->
                     <div class="card card-custom gutter-b example example-compact">
                         <div class="card-header">
-                            <h3 class="card-title">Add Receipt</h3>
+                            <h3 class="card-title">Add Expense</h3>
                         </div>
                         <!--begin::Form-->
-                        <form class="form" method="POST" action="{{ route('receipts.store') }}"
+                        <form class="form" method="POST" action="{{ route('expenses.store') }}"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
@@ -68,30 +68,17 @@
                                         <span class="form-text text-muted">Please select the date</span>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Place:</label>
-                                        <input required name="place" type="text" class="form-control"
-                                            placeholder="Enter place name" />
-                                        <span class="form-text text-muted">Please the receipt place.</span>
+                                        <label>Amount:</label>
+                                        <input required name="amount" type="number" class="form-control"
+                                            placeholder="Enter contact number" />
+                                        <span class="form-text text-muted">Please enter total amount</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="typeSelect1">Amount:</label>
-                                            <input required name="amount" type="number" class="form-control"
-                                                placeholder="Enter receipt amount" />
-                                            <span class="form-text text-muted">Please the receipt amount.</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="typeSelect1">Receipt Images:</label>
-
-                                            <input required multiple name="receipt[]" type="file" class="form-control"
-                                                placeholder="Enter receipt receipt" />
-
-                                            <span class="form-text text-muted">Please the receipt receipt.</span>
-                                        </div>
+                                        <label>Name:</label>
+                                        <textarea required name="name" class="form-control" id="exampleTextarea" rows="1"></textarea>
+                                        <span class="form-text text-muted">Please enter name</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">

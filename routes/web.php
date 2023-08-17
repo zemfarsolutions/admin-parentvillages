@@ -8,7 +8,8 @@ use App\Http\Controllers\{
     TimeTrackingController,
     UserController,
     ReceiptController,
-    ExpenseController
+    ExpenseController,
+    IntakeController
 };
 
 /*
@@ -46,4 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/receipts/delete/{receipt}', [ReceiptController::class, 'destroy']);
 
     Route::resource('/expenses', ExpenseController::class)->except(['destroy']);
+    Route::post('/expenses/delete/{expense}', [ExpenseController::class, 'destroy']);
+
+    Route::resource('/intakes', IntakeController::class)->except(['destroy']);
+    Route::get('/intakes/{intake}/view', [IntakeController::class, 'view']);
 });

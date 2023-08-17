@@ -14,4 +14,9 @@ class IntakeAnswer extends Model
         'question_id',
         'answer'
     ];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class, 'question_id', 'id');
+    }
 }

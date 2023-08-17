@@ -6,6 +6,7 @@ use App\Http\Controllers\API\Expense;
 use App\Http\Controllers\API\MileageLog;
 use App\Http\Controllers\API\TimeTracking;
 use App\Http\Controllers\API\Receipt;
+use App\Http\Controllers\API\IntakeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,4 @@ Route::get('/get-time-trackings', [TimeTracking::class, 'index']);
 Route::get('/get-mileage-logs', [MileageLog::class, 'index']);
 Route::get('/get-receipts', [Receipt::class, 'index']);
 Route::get('/get-expenses', [Expense::class, 'index']);
+Route::get('/get-intakes', [IntakeController::class, 'index']);
