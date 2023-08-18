@@ -631,7 +631,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ gettype(strpos(url()->full(), '/appointments')) == 'integer' ? 'menu-item-active' : null }}"
+                                aria-haspopup="true">
                                 <a href="/appointments" class="menu-link">
                                     <span class="svg-icon menu-icon">
                                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->

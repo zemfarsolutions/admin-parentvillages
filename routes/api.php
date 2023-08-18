@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\Appointment;
 use App\Http\Controllers\API\Client;
 use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\Expense;
@@ -32,3 +33,4 @@ Route::get('/get-mileage-logs', [MileageLog::class, 'index']);
 Route::get('/get-receipts', [Receipt::class, 'index']);
 Route::get('/get-expenses', [Expense::class, 'index']);
 Route::get('/get-intakes', [IntakeController::class, 'index']);
+Route::get('/get-appointments', [Appointment::class, 'index']);

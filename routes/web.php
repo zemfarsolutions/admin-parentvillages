@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    AppointmentController,
     EmployeeController,
     MileageLogController,
     TimeTrackingController,
@@ -51,4 +52,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/intakes', IntakeController::class)->except(['destroy']);
     Route::get('/intakes/{intake}/view', [IntakeController::class, 'view']);
+
+    Route::resource('/appointments', AppointmentController::class)->except(['destroy']);
+    Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
 });

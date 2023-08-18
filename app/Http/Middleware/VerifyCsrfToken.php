@@ -16,5 +16,6 @@ class VerifyCsrfToken extends Middleware
         '/mileage-logs/delete/*',
         '/receipts/delete/*',
         '/expenses/delete/*',
+        '/appointments/delete/*'
     ];
 }
