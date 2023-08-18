@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    ScholarshipController,
     AppointmentController,
     EmployeeController,
     MileageLogController,
@@ -55,4 +56,6 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/appointments', AppointmentController::class)->except(['destroy']);
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
+
+    Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
 });

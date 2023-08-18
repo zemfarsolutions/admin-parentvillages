@@ -593,7 +593,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <li class="menu-item menu-item-submenu {{ gettype(strpos(url()->full(), '/scholarsips')) == 'integer' ? 'menu-item-open' : null }}"
+                                aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <span class="svg-icon menu-icon">
                                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Files/Upload.svg-->
@@ -614,18 +615,26 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">File Upload</span>
+                                    <span class="menu-text">Scholarships</span>
                                     <i class="menu-arrow"></i>
                                 </a>
                                 <div class="menu-submenu">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="/client-documents" class="menu-link">
+                                            <a href="/scholarships/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">View Files</span>
+                                                <span class="menu-text">Add Scholarship</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item" aria-haspopup="true">
+                                            <a href="/scholarships" class="menu-link">
+                                                <i class="menu-bullet menu-bullet-dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="menu-text">View Scholarships</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -675,37 +684,18 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">Resources</span>
+                                    <span class="menu-text">File Upload</span>
                                     <i class="menu-arrow"></i>
                                 </a>
                                 <div class="menu-submenu">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/image-input.html" class="menu-link">
+                                            <a href="/client-documents" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">Image Input</span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/dropzonejs.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">DropzoneJS</span>
-                                                <span class="menu-label">
-                                                    <span class="label label-danger label-inline">new</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/uppy.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">Uppy</span>
+                                                <span class="menu-text">View Files</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -732,7 +722,7 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">Scholarships</span>
+                                    <span class="menu-text">Resources</span>
                                     <i class="menu-arrow"></i>
                                 </a>
                                 <div class="menu-submenu">
