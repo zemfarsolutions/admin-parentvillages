@@ -48,7 +48,11 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+    <script src="https://cdn.tiny.cloud/1/dhkz3w2ysf7bnr5gvqynm9uzqhyva44o9cv4nsuxbdtvvt9g/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
     <script>
         (function(h, o, t, j, a, r) {
             h.hj = h.hj || function() {
@@ -593,7 +597,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu {{ gettype(strpos(url()->full(), '/scholarsips')) == 'integer' ? 'menu-item-open' : null }}"
+                            <li class="menu-item menu-item-submenu {{ gettype(strpos(url()->full(), '/scholarships')) == 'integer' ? 'menu-item-open' : null }}"
                                 aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <span class="svg-icon menu-icon">
@@ -621,7 +625,8 @@
                                 <div class="menu-submenu">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
-                                        <li class="menu-item" aria-haspopup="true">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/scholarships/create')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
                                             <a href="/scholarships/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
@@ -629,7 +634,8 @@
                                                 <span class="menu-text">Add Scholarship</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item" aria-haspopup="true">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/scholarships')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
                                             <a href="/scholarships" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>

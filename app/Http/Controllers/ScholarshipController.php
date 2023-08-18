@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ScholarshipController extends Controller
@@ -18,14 +19,17 @@ class ScholarshipController extends Controller
 
     public function create()
     {
-        return view('appointments.create');
+        return view('scholarships.create');
     }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
-            'link' => 'required'
+            'title' => 'required',
+            'short_description' => 'required',
+            'full_description' => 'required',
+            'deadline' => 'required',
+            'event_date' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -34,24 +38,31 @@ class ScholarshipController extends Controller
                 ->withInput();
         }
 
-        // UserAppointment::create([
-        //     'user_id' => $request->user_id,
-        //     'link' => $request->link
-        // ]);
+        Scholarship::create([
+            'admin_id' => Auth::user()->id,
+            'title' => $request->title,
+            'short_description' => $request->short_description,
+            'full_description' => $request->full_description,
+            'deadline' => date_format(date_create($request->deadline), "Y-m-d"),
+            'event_date' => date_format(date_create($request->event_date), "Y-m-d H:i:s"),
+        ]);
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment added successfully.');
+        return redirect()->route('scholarships.index')->with('success', 'Scholarship added successfully.');
     }
 
-    public function edit()
+    public function edit(Scholarship $scholarship)
     {
-        return view('appointments.edit', compact('appointment'));
+        return view('scholarships.edit', compact('scholarship'));
     }
 
-    public function update(Request $request)
+    public function update(Scholarship $scholarship, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
-            'link' => 'required'
+            'title' => 'required',
+            'short_description' => 'required',
+            'full_description' => 'required',
+            'deadline' => 'required',
+            'event_date' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -60,18 +71,26 @@ class ScholarshipController extends Controller
                 ->withInput();
         }
 
-        // $appointment->update([
-        //     'user_id' => $request->user_id,
-        //     'link' => $request->link
-        // ]);
+        $scholarship->update([
+            'title' => $request->title,
+            'short_description' => $request->short_description,
+            'full_description' => $request->full_description,
+            'deadline' => $request->deadline,
+            'event_date' => $request->event_date
+        ]);
 
-        return redirect()->route('appointments.index')->with('success', 'Appointment updated successfully.');
+        return redirect()->route('scholarships.index')->with('success', 'Scholarship updated successfully.');
     }
 
-    public function destroy()
+    public function show(Scholarship $scholarship)
     {
-        // $appointment->delete();
+        return view('scholarships.view', compact('scholarship'));
+    }
 
-        return redirect()->route('appointments.index')->with('error', 'Appointment deleted successfully.');
+    public function destroy(Scholarship $scholarship)
+    {
+        $scholarship->delete();
+
+        return redirect()->route('scholarships.index')->with('error', 'Scholarship deleted successfully.');
     }
 }

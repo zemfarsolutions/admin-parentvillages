@@ -111,7 +111,7 @@
                 <a href="../../../.html" class=""></a>
                 <!--end::Button-->
                 <!--begin::Button-->
-                <a href="add-project.html" class="btn btn-light-primary font-weight-bold ml-2">Add Project</a>
+                <a href="/scholarships/create" class="btn btn-light-primary font-weight-bold ml-2">Add Scholarship</a>
                 <!--end::Button-->
                 <!--begin::Dropdown-->
                 <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions"
@@ -269,7 +269,12 @@
                                         <a href="#" class="font-weight-bolder text-primary ml-2">72 Applications</a>
                                     </div>
                                     <div class="d-flex align-items-center mr-7">
-                                        <a href="#" class="btn btn-primary">Details</a>
+                                        <a href="/scholarships/{{ $record->id }}"
+                                            class="btn btn-primary btn-sm">View</a>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a href="/scholarships/{{ $record->id }}/edit"
+                                            class="btn btn-primary btn-sm">Edit</a>
                                     </div>
                                 </div>
                             </div>
