@@ -56,4 +56,9 @@ class Employee extends Authenticatable
     {
         return $this->hasMany(EmployeeExpense::class, 'employee_id', 'id');
     }
+
+    public function evaluations()
+    {
+        return $this->belongsToMany(Evaluation::class, 'employees_evaluations');
+    }
 }

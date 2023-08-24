@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\API\Accessibility;
 use App\Http\Controllers\API\Appointment;
 use App\Http\Controllers\API\Client;
 use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\Expense;
 use App\Http\Controllers\API\MileageLog;
 use App\Http\Controllers\API\TimeTracking;
+use App\Http\Controllers\API\AdminResource;
 use App\Http\Controllers\API\Receipt;
 use App\Http\Controllers\API\IntakeController;
 use Illuminate\Http\Request;
@@ -34,3 +36,5 @@ Route::get('/get-receipts', [Receipt::class, 'index']);
 Route::get('/get-expenses', [Expense::class, 'index']);
 Route::get('/get-intakes', [IntakeController::class, 'index']);
 Route::get('/get-appointments', [Appointment::class, 'index']);
+Route::get('/get-resources/{resource}', [AdminResource::class, 'index']);
+Route::get('/get-accessibility/{evaluation:slug}', [Accessibility::class, 'index']);

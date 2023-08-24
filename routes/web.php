@@ -3,15 +3,18 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    AccessController,
     ScholarshipController,
     AppointmentController,
     EmployeeController,
+    EvaluationController,
     MileageLogController,
     TimeTrackingController,
     UserController,
     ReceiptController,
     ExpenseController,
-    IntakeController
+    IntakeController,
+    ResourceController
 };
 
 /*
@@ -58,4 +61,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
 
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
+
+    Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
+    Route::resource('/resources', ResourceController::class)->except(['destroy']);
+    Route::get('/resources/reviews/create/{id}', [ResourceController::class, 'showCreateForm']);
+
+    Route::get('/resources/{resource}/delete', [ResourceController::class, 'destroy']);
+
+    Route::get('/evaluations/accessibility/{evaluation:slug}', [AccessController::class, 'index']);
+    Route::get('/evaluations/accessibility/create/{evaluation:slug}', [AccessController::class, 'create']);
+    Route::post('/evaluations/accessibility/{evaluation}', [AccessController::class, 'store']);
+    Route::post('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
 });

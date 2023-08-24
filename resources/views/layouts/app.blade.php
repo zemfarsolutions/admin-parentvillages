@@ -136,7 +136,6 @@
                     <a href="/" class="brand-logo">
                         <img alt="Logo" width="180px" class="mt-2"
                             src="https://ml5qkd9yohde.i.optimole.com/w:253/h:73/q:mauto/f:avif/https://parentvillage.wetestlink.com/wp-content/uploads/2023/06/Untitled-1-2-1.png" />
-                        {{-- <span style="color: white; font-size:17px; font-weight:500;">Parent Villages</span> --}}
                     </a>
                     <!--end::Logo-->
                     <!--begin::Toggle-->
@@ -485,7 +484,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <li class="menu-item menu-item-submenu {{ gettype(strpos(url()->full(), '/evaluations')) == 'integer' ? 'menu-item-open' : null }}"
+                                aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="javascript:;" class="menu-link menu-toggle">
                                     <span class="svg-icon menu-icon">
                                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Files/Upload.svg-->
@@ -512,31 +512,22 @@
                                 <div class="menu-submenu">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/image-input.html" class="menu-link">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/evaluations/create')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/evaluations/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">Image Input</span>
+                                                <span class="menu-text">Add Document</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/dropzonejs.html" class="menu-link">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/evaluations')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/evaluations" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">DropzoneJS</span>
-                                                <span class="menu-label">
-                                                    <span class="label label-danger label-inline">new</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/uppy.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">Uppy</span>
+                                                <span class="menu-text">View Documents</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -690,75 +681,28 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">File Upload</span>
-                                    <i class="menu-arrow"></i>
-                                </a>
-                                <div class="menu-submenu">
-                                    <i class="menu-arrow"></i>
-                                    <ul class="menu-subnav">
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="/client-documents" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">View Files</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="javascript:;" class="menu-link menu-toggle">
-                                    <span class="svg-icon menu-icon">
-                                        <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Files/Upload.svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                            viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path
-                                                    d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z"
-                                                    fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <rect fill="#000000" opacity="0.3" x="11" y="2"
-                                                    width="2" height="14" rx="1" />
-                                                <path
-                                                    d="M12.0362375,3.37797611 L7.70710678,7.70710678 C7.31658249,8.09763107 6.68341751,8.09763107 6.29289322,7.70710678 C5.90236893,7.31658249 5.90236893,6.68341751 6.29289322,6.29289322 L11.2928932,1.29289322 C11.6689749,0.916811528 12.2736364,0.900910387 12.6689647,1.25670585 L17.6689647,5.75670585 C18.0794748,6.12616487 18.1127532,6.75845471 17.7432941,7.16896473 C17.3738351,7.57947475 16.7415453,7.61275317 16.3310353,7.24329415 L12.0362375,3.37797611 Z"
-                                                    fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg>
-                                        <!--end::Svg Icon-->
-                                    </span>
                                     <span class="menu-text">Resources</span>
                                     <i class="menu-arrow"></i>
                                 </a>
                                 <div class="menu-submenu">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/image-input.html" class="menu-link">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/resources/create')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/resources/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">Image Input</span>
+                                                <span class="menu-text">Add Resource</span>
                                             </a>
                                         </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/dropzonejs.html" class="menu-link">
+                                        <li class="menu-item {{ gettype(strpos(url()->full(), '/resources')) == 'integer' ? 'menu-item-active' : null }}"
+                                            aria-haspopup="true">
+                                            <a href="/resources" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">DropzoneJS</span>
-                                                <span class="menu-label">
-                                                    <span class="label label-danger label-inline">new</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item" aria-haspopup="true">
-                                            <a href="crud/file-upload/uppy.html" class="menu-link">
-                                                <i class="menu-bullet menu-bullet-dot">
-                                                    <span></span>
-                                                </i>
-                                                <span class="menu-text">Uppy</span>
+                                                <span class="menu-text">View Resources</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -1129,8 +1073,7 @@
                                                                                 <path
                                                                                     d="M11.6734943,8.3307728 L14.9993074,6.09979492 L14.1213255,5.22181303 C13.7308012,4.83128874 13.7308012,4.19812376 14.1213255,3.80759947 L15.535539,2.39338591 C15.9260633,2.00286161 16.5592283,2.00286161 16.9497526,2.39338591 L22.6066068,8.05024016 C22.9971311,8.44076445 22.9971311,9.07392943 22.6066068,9.46445372 L21.1923933,10.8786673 C20.801869,11.2691916 20.168704,11.2691916 19.7781797,10.8786673 L18.9002333,10.0007208 L16.6692373,13.3265608 C16.9264145,14.2523264 16.9984943,15.2320236 16.8664372,16.2092466 L16.4344698,19.4058049 C16.360509,19.9531149 15.8568695,20.3368403 15.3095595,20.2628795 C15.0925691,20.2335564 14.8912006,20.1338238 14.7363706,19.9789938 L5.02099894,10.2636221 C4.63047465,9.87309784 4.63047465,9.23993286 5.02099894,8.84940857 C5.17582897,8.69457854 5.37719743,8.59484594 5.59418783,8.56552292 L8.79074617,8.13355557 C9.76799113,8.00149544 10.7477104,8.0735815 11.6734943,8.3307728 Z"
                                                                                     fill="#000000" />
-                                                                                <polygon fill="#000000"
-                                                                                    opacity="0.3"
+                                                                                <polygon fill="#000000" opacity="0.3"
                                                                                     transform="translate(7.050253, 17.949747) rotate(-315.000000) translate(-7.050253, -17.949747)"
                                                                                     points="5.55025253 13.9497475 5.55025253 19.6640332 7.05025253 21.9497475 8.55025253 19.6640332 8.55025253 13.9497475" />
                                                                             </g>
