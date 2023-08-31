@@ -99,7 +99,7 @@ var KTAppsUsersListDatatable = function() {
 					template: function(data) {
 						return '\
                             <div class="d-flex">\
-                                <a href="/time-trackings/'+data.id+'/edit" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details">\
+                                <a href="/time-trackings/'+data.id+'/edit" class="btn btn-sm btn-outline-secondary btn-text-primary btn-hover-secondary btn-icon mr-2" title="Edit details">\
                                     <span class="svg-icon svg-icon-md">\
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -111,7 +111,7 @@ var KTAppsUsersListDatatable = function() {
                                     </span>\
                                 </a>\
                                 <form action="/time-trackings/delete/'+data.id+'" method="POST">\
-                                    <button type="submit" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon">\
+                                    <button type="submit" class="btn btn-sm btn-outline-danger btn-text-primary btn-hover-danger btn-icon">\
                                         <span class="svg-icon svg-icon-md">\
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\

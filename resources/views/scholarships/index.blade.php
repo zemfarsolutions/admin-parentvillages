@@ -125,7 +125,7 @@
             <!--begin::Row-->
             <div class="row">
                 @foreach ($records as $record)
-                    <div class="col-xl-4">
+                    <div class="col-xl-6">
 
                         <!--begin::Card-->
                         <div class="card card-custom gutter-b card-stretch">

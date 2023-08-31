@@ -32,7 +32,8 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/resources/create" class="btn btn-light-primary font-weight-bolder btn-sm">Add Document</a>
+                <a href="/resources/create" target="_blank" class="btn btn-light-primary font-weight-bolder btn-sm">Add
+                    Document</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -129,12 +130,33 @@
                                         <div class="card-body">
                                             <div class="d-flex flex-column align-items-center">
                                                 <!--begin: Icon-->
-                                                <img alt="" class="max-h-65px"
-                                                    src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
-                                                <!--end: Icon-->
-                                                <!--begin: Tite-->
+                                                @if (pathinfo($record->path, PATHINFO_EXTENSION) === 'pdf')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'png')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://static.thenounproject.com/png/4147238-200.png" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'docx')
+
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'jpg' || pathinfo($record->path, PATHINFO_EXTENSION) === 'jpeg')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'zip')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/zip.svg" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'psd')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-adobe-photoshop-psd-ps-icon-png-image_4952703.png" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'xml')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'html')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @endif
+                                                <!--begin: Title-->
                                                 <a href="{{ $record->path }}" target="_blank"
-                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ $record->name }}.pdf</a>
+                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ $record->name . '.' . pathinfo($record->path, PATHINFO_EXTENSION) }}</a>    
                                                 <!--end: Tite-->
                                             </div>
                                         </div>

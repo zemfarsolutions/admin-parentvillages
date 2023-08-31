@@ -73,27 +73,14 @@ var KTLogin = function() {
 						success: function(response) {
 
 							if (response.status == 200) {
-								swal.fire({
-									text: response.message,
-									icon: "success",
-									buttonsStyling: false,
-									confirmButtonText: "Ok, got it!",
-									customClass: {
-										confirmButton: "btn font-weight-bold btn-light-primary"
-									}
-								}).then(function(result) {
-	
-									if (result.isConfirmed) {
+								
 										window.location.href = "/";
-									}
-	
-									KTUtil.scrollTop();
-								});	
+									
 							}
 
 							if (response.status == 500) {
 								swal.fire({
-									text: "Sorry, looks like there are some errors detected, please try again.",
+									text: "Invalid Credentials, please try again.",
 									icon: "error",
 									buttonsStyling: false,
 									confirmButtonText: "Ok, got it!",
