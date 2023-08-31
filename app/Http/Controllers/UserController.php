@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,15 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('users.create');
+        $total_users = User::all()->count();
+        return view('users.create', compact('total_users'));
+    }
+
+    public function show(User $user)
+    {
+        $records = UserDocument::where('user_id', $user->id)->get();
+
+        return view('users.show', compact('records'));
     }
 
     public function store(Request $request)
@@ -26,7 +35,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -38,7 +47,7 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully.');
@@ -53,7 +62,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -64,13 +73,13 @@ class UserController extends Controller
 
         $user->update([
             'name' => $request->name,
-            'email' => $request->email
+            'email' => $request->email,
         ]);
 
         if (isset($request->password)) {
 
             $user->update([
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
             ]);
         }
 

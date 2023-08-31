@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     });
 
-    Route::resource('/users', UserController::class);
+    Route::resource('/users', UserController::class);   
+
     Route::resource('/employees', EmployeeController::class);
 
     Route::resource('/time-trackings', TimeTrackingController::class)->except(['destroy']);

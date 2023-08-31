@@ -113,6 +113,9 @@ var KTAppsUsersListDatatable = function() {
 									</svg>\
 								</span>\
 	                        </a>\
+							<a href="/users/'+data.id+'" class="btn btn-sm btn-outline-secondary btn-text-primary btn-hover-secondary btn-icon mr-2" title="Edit details">\
+							<img class="max-h-20px"  src="https://cdn-icons-png.flaticon.com/512/159/159078.png">\
+	                        </a>\
 	                    ';
 					},
 				}],
