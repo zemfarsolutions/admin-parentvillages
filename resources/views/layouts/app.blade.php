@@ -2053,7 +2053,7 @@
     </div>
     <!--end::Scrolltop-->
     <script>
-        var HOST_URL = "http://127.0.0.1:8000/";
+        var HOST_URL = "http://127.0.0.1:8080/";
     </script>
     <!--begin::Global Config(global config for global JS scripts)-->
     <script>

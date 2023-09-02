@@ -92,7 +92,7 @@
                                 </svg>
                                 <!--end::Svg Icon-->
                             </span>
-                            New Expense
+                            New Expense 
                         </a>
                         <!--end::Button-->
                     </div>
