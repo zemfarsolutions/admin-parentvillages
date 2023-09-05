@@ -1,3 +1,11 @@
+.login--bg--pattern {
+  background-color: #001728;
+  background-image: url('../../../media/login/dashboard-bg-patterns.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
 .login.login-1 .login-aside .aside-img {
   min-height: 450px; }
 

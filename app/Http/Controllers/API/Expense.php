@@ -11,7 +11,7 @@ class Expense extends Controller
     public function index()
     {
         $records = EmployeeExpense::with(['employee' => function ($query) {
-            $query->select('id', 'name')->get();
+            $query->select('id', 'name')->get();    
         }])->get();
 
         return $records;
