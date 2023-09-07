@@ -10,6 +10,7 @@ use App\Http\Controllers\API\TimeTracking;
 use App\Http\Controllers\API\AdminResource;
 use App\Http\Controllers\API\Receipt;
 use App\Http\Controllers\API\IntakeController;
+use App\Http\Controllers\API\AppliedScholarships;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,3 +39,4 @@ Route::get('/get-intakes', [IntakeController::class, 'index']);
 Route::get('/get-appointments', [Appointment::class, 'index']);
 Route::get('/get-resources/{resource}', [AdminResource::class, 'index']);
 Route::get('/get-accessibility/{evaluation:slug}', [Accessibility::class, 'index']);
+Route::get('/get-applied-scholarships', [AppliedScholarships::class, 'index']);

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     AccessController,
+    AppliedScholarshipController,
     ScholarshipController,
     AppointmentController,
     EmployeeController,
@@ -81,4 +82,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/change-password', [ProfileController::class, 'password_index']);
     Route::post('/change-password/{user}', [ProfileController::class, 'passwordEdit']);
     Route::post('/change-profile/{user}', [ProfileController::class, 'profileEdit']);
+
+    Route::resource('/applicants', AppliedScholarshipController::class)->except(['show']);
+    Route::get('/applicants/{userapplication:slug}/view' ,[AppliedScholarshipController::class, 'show']);
+
 });
