@@ -49,6 +49,9 @@
                         <form class="form" method="POST" action="/scholarships/{{ $scholarship->id }}">
                             @csrf
                             @method('PUT')
+                            <?php
+                            $date = date_create($scholarship->date);
+                            ?>
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col-lg-6">
@@ -77,7 +80,7 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Due Date:</label>
-                                        <input required value="{{ $scholarship->deadline }}" id="kt_datepicker_1"
+                                        <input required value="{{ date_format($date, 'm/d/Y') }}" id="kt_datepicker_1"
                                             name="deadline" type="text" class="form-control"
                                             placeholder="Enter scholarship deadline" />
                                         <span class="form-text text-muted">Please enter deadline</span>
@@ -110,7 +113,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                        <a href="/" class="btn btn-secondary">Cancel</a>
+                                        <a href="/scholarships" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </div>
                             </div>

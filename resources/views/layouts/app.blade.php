@@ -53,6 +53,18 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    <style>
+        .kbw-signature {
+            width: 100%;
+            height: 200px;
+        }
+
+        #sig canvas {
+            width: 100% !important;
+            height: auto;
+        }
+    </style>
+
     <script>
         (function(h, o, t, j, a, r) {
             h.hj = h.hj || function() {
@@ -755,7 +767,7 @@
                                     <li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active"
                                         data-menu-toggle="click" aria-haspopup="true">
                                         <a href="javascript:;" class="menu-link menu-toggle">
-                                            <span class="menu-text">Modules</span>
+                                            <span class="menu-text">Quick Links</span>
                                             <i class="menu-arrow"></i>
                                         </a>
                                         <div class="menu-submenu menu-submenu-classic menu-submenu-left">
@@ -880,10 +892,11 @@
                                                         </ul>
                                                     </div>
                                                 </li>
-                                                {{-- <li class="menu-item" aria-haspopup="true">
-                                                    <a href="javascript:;" class="menu-link">
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
                                                         <span class="svg-icon menu-icon">
-                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Spam.svg-->
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                 width="24px" height="24px" viewBox="0 0 24 24"
@@ -891,17 +904,279 @@
                                                                 <g stroke="none" stroke-width="1" fill="none"
                                                                     fill-rule="evenodd">
                                                                     <rect x="0" y="0"
-                                                                        width="24" height="24" />
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12" r="10">
+                                                                    </circle>
                                                                     <path
-                                                                        d="M4.5,3 L19.5,3 C20.3284271,3 21,3.67157288 21,4.5 L21,19.5 C21,20.3284271 20.3284271,21 19.5,21 L4.5,21 C3.67157288,21 3,20.3284271 3,19.5 L3,4.5 C3,3.67157288 3.67157288,3 4.5,3 Z M8,5 C7.44771525,5 7,5.44771525 7,6 C7,6.55228475 7.44771525,7 8,7 L16,7 C16.5522847,7 17,6.55228475 17,6 C17,5.44771525 16.5522847,5 16,5 L8,5 Z M10.5857864,14 L9.17157288,15.4142136 C8.78104858,15.8047379 8.78104858,16.4379028 9.17157288,16.8284271 C9.56209717,17.2189514 10.1952621,17.2189514 10.5857864,16.8284271 L12,15.4142136 L13.4142136,16.8284271 C13.8047379,17.2189514 14.4379028,17.2189514 14.8284271,16.8284271 C15.2189514,16.4379028 15.2189514,15.8047379 14.8284271,15.4142136 L13.4142136,14 L14.8284271,12.5857864 C15.2189514,12.1952621 15.2189514,11.5620972 14.8284271,11.1715729 C14.4379028,10.7810486 13.8047379,10.7810486 13.4142136,11.1715729 L12,12.5857864 L10.5857864,11.1715729 C10.1952621,10.7810486 9.56209717,10.7810486 9.17157288,11.1715729 C8.78104858,11.5620972 8.78104858,12.1952621 9.17157288,12.5857864 L10.5857864,14 Z"
-                                                                        fill="#000000" />
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
                                                                 </g>
                                                             </svg>
                                                             <!--end::Svg Icon-->
                                                         </span>
-                                                        <span class="menu-text">Create New Project</span>
+                                                        <span class="menu-text">Time Trackings</span>
+                                                        <i class="menu-arrow"></i>
                                                     </a>
-                                                </li> --}}
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/time-trackings/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Record</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/time-trackings" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Previous
+                                                                        Records</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
+                                                        <span class="svg-icon menu-icon">
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                width="24px" height="24px" viewBox="0 0 24 24"
+                                                                version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none"
+                                                                    fill-rule="evenodd">
+                                                                    <rect x="0" y="0"
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12" r="10">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <span class="menu-text">Mileage Logs</span>
+                                                        <i class="menu-arrow"></i>
+                                                    </a>
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/mileage-logs/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Log</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/mileage-logs" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Logs</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
+                                                        <span class="svg-icon menu-icon">
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                width="24px" height="24px" viewBox="0 0 24 24"
+                                                                version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none"
+                                                                    fill-rule="evenodd">
+                                                                    <rect x="0" y="0"
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12" r="10">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <span class="menu-text">Receipts</span>
+                                                        <i class="menu-arrow"></i>
+                                                    </a>
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/receipts/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Receipt</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/receipts" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Receipts</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
+                                                        <span class="svg-icon menu-icon">
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                width="24px" height="24px" viewBox="0 0 24 24"
+                                                                version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none"
+                                                                    fill-rule="evenodd">
+                                                                    <rect x="0" y="0"
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12" r="10">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <span class="menu-text">Expenses</span>
+                                                        <i class="menu-arrow"></i>
+                                                    </a>
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/expenses/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Expense</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/expenses" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Expenses</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
+                                                        <span class="svg-icon menu-icon">
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                width="24px" height="24px" viewBox="0 0 24 24"
+                                                                version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none"
+                                                                    fill-rule="evenodd">
+                                                                    <rect x="0" y="0"
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12"
+                                                                        r="10">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <span class="menu-text">Evaluation Process</span>
+                                                        <i class="menu-arrow"></i>
+                                                    </a>
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/evaluations/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Document</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/evaluations" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Documents</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="menu-item menu-item-submenu" data-menu-toggle="hover"
+                                                    aria-haspopup="true">
+                                                    <a href="javascript:;" class="menu-link menu-toggle">
+                                                        <span class="svg-icon menu-icon">
+                                                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Code/CMD.svg-->
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                width="24px" height="24px" viewBox="0 0 24 24"
+                                                                version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none"
+                                                                    fill-rule="evenodd">
+                                                                    <rect x="0" y="0"
+                                                                        width="24" height="24"></rect>
+                                                                    <circle fill="#000000" opacity="0.3"
+                                                                        cx="12" cy="12"
+                                                                        r="10">
+                                                                    </circle>
+                                                                    <path
+                                                                        d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                                                        fill="#000000" opacity="0.3"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <span class="menu-text">Intakes Management</span>
+                                                        <i class="menu-arrow"></i>
+                                                    </a>
+                                                    <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+                                                        <ul class="menu-subnav">
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/intakes/create" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">Add Intake</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="menu-item" aria-haspopup="true">
+                                                                <a href="/intakes" class="menu-link">
+                                                                    <i class="menu-bullet menu-bullet-dot">
+                                                                        <span></span>
+                                                                    </i>
+                                                                    <span class="menu-text">View Intakes</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
                                     </li>
@@ -986,7 +1261,8 @@
             <!--begin::Header-->
             <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
-                    <div class="symbol-label" style="background-image:url('../storage/{{ Auth::user()->avatar }}')">
+                    <div class="symbol-label"
+                        style="background-image:url('../storage/{{ Auth::user()->avatar }}')">
                     </div>
                     <i class="symbol-badge bg-success"></i>
                 </div>
@@ -1015,8 +1291,9 @@
                             <span class="navi-icon mr-1">
                                 <span class="svg-icon svg-icon-lg svg-icon-primary">
                                     <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Mail-notification.svg-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
                                             <path
@@ -1037,8 +1314,9 @@
                                 class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5 mt-4">
                                 <span class="svg-icon svg-icon-primary svg-icon-sm">
                                     <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-10-29-133027/theme/html/demo1/dist/../src/media/svg/icons/General/Lock.svg-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <mask fill="white">
                                                 <use xlink:href="#path-1" />
@@ -1069,8 +1347,9 @@
                             <div class="symbol-label">
                                 <span class="svg-icon svg-icon-primary svg-icon-2x">
                                     <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-10-29-133027/theme/html/demo1/dist/../src/media/svg/icons/General/User.svg-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <polygon points="0 0 24 0 24 24 0 24" />
                                             <path
@@ -1096,8 +1375,9 @@
                             <div class="symbol-label">
                                 <span class="svg-icon svg-icon-primary svg-icon-2x">
                                     <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-10-29-133027/theme/html/demo1/dist/../src/media/svg/icons/General/Shield-protected.svg-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                        viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24" />
                                             <path
@@ -1278,7 +1558,8 @@
                 </li>
             </ul>
             <div class="offcanvas-close mt-n1 pr-5">
-                <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_panel_close">
+                <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary"
+                    id="kt_quick_panel_close">
                     <i class="ki ki-close icon-xs text-muted"></i>
                 </a>
             </div>
@@ -2261,6 +2542,9 @@
     <!--end::Page Vendors-->
     <!--begin::Page Scripts(used by this page)-->
     <script src="/assets/js/pages/widgets9cd7.js?v=7.1.5"></script>
+
+    <script src="/assets/js/pages/crud/forms/widgets/bootstrap-datepicker9cd7.js?v=7.1.5"></script>
+
     <!--end::Page Scripts-->
     <script>
         @if (Session::has('success'))

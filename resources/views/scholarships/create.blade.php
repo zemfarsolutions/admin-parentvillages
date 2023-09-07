@@ -104,7 +104,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                        <a href="/" class="btn btn-secondary">Cancel</a>
+                                        <a href="/appointments" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </div>
                             </div>

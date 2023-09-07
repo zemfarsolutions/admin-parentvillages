@@ -17,4 +17,9 @@ class Scholarship extends Model
         'deadline',
         'event_date'
     ];
+
+    public function applications()
+    {
+        return $this->hasMany(UserApplication::class, 'scholarship_id', 'id');
+    }
 }

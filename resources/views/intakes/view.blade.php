@@ -323,6 +323,13 @@
                                     @endforeach
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Signature</span>
+                                    <img class="mb-4 w-50" src="/assets/media/client/signatures/{{ $intake->signature }}"
+                                        alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- end: Invoice body-->

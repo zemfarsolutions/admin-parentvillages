@@ -75,8 +75,8 @@ var KTAppsUsersListDatatable = function() {
 					}
 				},
 				{
-					field: 'number_of_hours',
-					title: 'Number Of Hours',
+					field: 'number_of_miles',
+					title: 'Number Of Miles',
 				},
 				{
 					field: 'description',

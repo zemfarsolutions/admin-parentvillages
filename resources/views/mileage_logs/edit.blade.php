@@ -49,6 +49,9 @@
                         <form class="form" method="POST" action="/mileage-logs/{{ $mileage_log->id }}">
                             @csrf
                             @method('PUT')
+                            <?php
+                            $date = date_create($mileage_log->date);
+                            ?>
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col-lg-6">
@@ -63,16 +66,17 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Date:</label>
-                                        <input name="date" value="{{ $mileage_log->date }}" type="text"
+                                        <input name="date" value="{{ date_format($date, 'm/d/Y') }}" type="text"
                                             class="form-control" id="kt_datepicker_1" readonly="readonly"
                                             placeholder="Select date" />
                                         <span class="form-text text-muted">Please select the date</span>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Number Of Hours:</label>
-                                        <input required name="number_of_hours" value="{{ $mileage_log->number_of_hours }}"
-                                            type="number" class="form-control" placeholder="Enter contact number" />
-                                        <span class="form-text text-muted">Please enter total number of hours</span>
+                                        <label>Number Of Miles:</label>
+                                        <input maxlength="9" pattern="[0-9]*" required name="number_of_miles"
+                                            value="{{ $mileage_log->number_of_miles }}" type="text" class="form-control"
+                                            placeholder="Enter contact number" />
+                                        <span class="form-text text-muted">Please enter total number of miles</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">

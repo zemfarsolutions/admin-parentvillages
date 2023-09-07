@@ -29,7 +29,7 @@ class MileageLogController extends Controller
         $validator = Validator::make($request->all(), [
             'employee_id' => 'required',
             'date' => 'required',
-            'number_of_hours' => 'required',
+            'number_of_miles' => 'required',
             'description' => 'required'
         ]);
 
@@ -42,7 +42,7 @@ class MileageLogController extends Controller
         EmployeeMileageLog::create([
             'employee_id' => $request->employee_id,
             'date' => date_format(date_create($request->date), "Y-m-d"),
-            'number_of_hours' => $request->number_of_hours,
+            'number_of_miles' => $request->number_of_miles,
             'description' => $request->description
         ]);
 
@@ -60,7 +60,7 @@ class MileageLogController extends Controller
         $validator = Validator::make($request->all(), [
             'employee_id' => 'required',
             'date' => 'required',
-            'number_of_hours' => 'required',
+            'number_of_miles' => 'required',
             'description' => 'required'
         ]);
 
@@ -73,7 +73,7 @@ class MileageLogController extends Controller
         $mileage_log->update([
             'employee_id' => $request->employee_id,
             'date' => date_format(date_create($request->date), "Y-m-d"),
-            'number_of_hours' => $request->number_of_hours,
+            'number_of_miles' => $request->number_of_miles,
             'description' => $request->description
         ]);
 

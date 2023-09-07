@@ -151,7 +151,7 @@ var KTAppsUsersListDatatable = function() {
 					template: function(data) {
 						return '\
                             <div class="d-flex">\
-                                <a href="/applicants/'+data.slug+'/view" class="btn btn-sm btn-outline-info btn-text-primary btn-hover-info btn-icon mr-2" title="Edit details">\
+                                <a href="/applicants/'+data.slug+'/view" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details">\
                                     <i class="flaticon2-document"></i>\
                                 </a>\
                             </div>\

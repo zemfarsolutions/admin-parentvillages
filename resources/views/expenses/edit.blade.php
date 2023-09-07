@@ -49,6 +49,9 @@
                         <form class="form" method="POST" action="/expenses/{{ $expense->id }}">
                             @csrf
                             @method('PUT')
+                            <?php
+                            $date = date_create($expense->date);
+                            ?>
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col-lg-6">
@@ -66,14 +69,14 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Date:</label>
-                                        <input name="date" value="{{ $expense->date }}" type="text"
-                                            class="form-control" id="kt_datepicker_1" readonly="readonly"
-                                            placeholder="Select date" />
+                                        <input maxlength="9" pattern="[0-9]*" name="date"
+                                            value="{{ date_format($date, 'm/d/Y') }}" type="text" class="form-control"
+                                            id="kt_datepicker_1" readonly="readonly" placeholder="Select date" />
                                         <span class="form-text text-muted">Please select the date</span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Amount:</label>
-                                        <input required name="amount" value="{{ $expense->amount }}" type="number"
+                                        <input required name="amount" value="{{ $expense->amount }}" type="text"
                                             class="form-control" placeholder="Enter contact number" />
                                         <span class="form-text text-muted">Please enter total Amount</span>
                                     </div>

@@ -69,8 +69,8 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Amount:</label>
-                                        <input required name="amount" type="number" class="form-control"
-                                            placeholder="Enter contact number" />
+                                        <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
+                                            class="form-control" placeholder="Enter contact number" />
                                         <span class="form-text text-muted">Please enter total amount</span>
                                     </div>
                                 </div>

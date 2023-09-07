@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'View Scholarship')
+@section('title', 'View Receipts')
 
 @section('content')
     <!--begin::Subheader-->
@@ -11,15 +11,15 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">Scholarship Details</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Receipts Details</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Scholarships</a>
+                            <a href="#" class="text-muted">Receipts</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Scholarship Details</a>
+                            <a href="#" class="text-muted">Receipts Details</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -46,38 +46,23 @@
                 <div class="card-body p-0">
                     <!-- begin: Invoice-->
                     <!-- begin: Invoice header-->
-                    <div class="row justify-content-center py-8 px-8 mt-10 px-md-0">
-                        <div class="col-md-9">
-                            <div class=" justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
-                                <h1 class="display-4 font-weight-boldest mb-10">{{ $scholarship->title }}</h1>
-                                <p>
-                                    {{ $scholarship->short_description }}
-                                </p>
-                                <p>
-                                    {{ $scholarship->full_description }}
-                                </p>
-                                <div class="d-flex">
-                                    <span class="d-flex px-4 flex-column opacity-70">
-                                        <span class="font-weight-bold">Due Date:</span>
-                                        <span class="font-weight-bold">{{ $scholarship->deadline }}</span>
-                                    </span>
-                                    <span class="d-flex flex-column opacity-70">
-                                        <span class="font-weight-bold">Event Date:</span>
-                                        <span class="font-weight-bold">{{ $scholarship->event_date }}</span>
-                                    </span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--begin::Card-->
+                            <div class="card card-custom gutter-b example example-compact">
+                                <div class="card-header">
+                                    <h3 class="card-title">View Receipt Images</h3>
                                 </div>
-                                <span class="d-flex flex-column align-items-md-end opacity-70">
-                                    {{-- <span>{{ $intake->email }}</span> --}}
-                                    {{-- <span>{{ $intake->phone }}</span> --}}
-                                </span>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <a href="/scholarships" class="btn btn-secondary">Cancel</a>
+
+                                <div class="card-body">
+                                    <div id="images">
+                                        @foreach ($images as $image)
+                                            <img src="/storage/{{ $image->path }}" width="200px" alt="Picture 1">
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
+                            <!--end::Card-->
                         </div>
                     </div>
                     <!-- end: Invoice header-->
@@ -95,4 +80,18 @@
         <!--end::Container-->
     </div>
     <!--end::Entry-->
+@endsection
+
+
+@section('scripts')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.4/viewer.css"
+        integrity="sha512-b94fU39uRUf9usNHmk4XELfdbrkV2qxLwc+QFTbcaZ1KmOQgPQHJLsh5ZadocguSh/cPBClAChSY6L408GGmjg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.4/viewer.js"
+        integrity="sha512-xFhwJZh3jKSCty1/n+IofvQTSSME9cTJQEOKKnSkRISbX07aZvEgNcJRjldqu+B8ZoXGxmIfOHmTMRDCIbnCQw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        console.log(document.getElementById('images'))
+        const gallery = new Viewer(document.getElementById('images'));
+    </script>
 @endsection

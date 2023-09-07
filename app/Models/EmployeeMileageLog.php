@@ -11,7 +11,7 @@ class EmployeeMileageLog extends Model
 
     protected $fillable = [
         'employee_id',
-        'number_of_hours',
+        'number_of_miles',
         'date',
         'description'
     ];

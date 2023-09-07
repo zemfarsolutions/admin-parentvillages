@@ -12,7 +12,7 @@ class ScholarshipController extends Controller
     public function index()
     {
         $total_scholarships = Scholarship::all()->count();
-        $records = Scholarship::all();
+        $records = Scholarship::with('applications')->get();
 
         return view('scholarships.index', compact('total_scholarships', 'records'));
     }
@@ -75,8 +75,8 @@ class ScholarshipController extends Controller
             'title' => $request->title,
             'short_description' => $request->short_description,
             'full_description' => $request->full_description,
-            'deadline' => $request->deadline,
-            'event_date' => $request->event_date
+            'deadline' => date_format(date_create($request->deadline), "Y-m-d"),
+            'event_date' => date_format(date_create($request->event_date), "Y-m-d H:i:s"),
         ]);
 
         return redirect()->route('scholarships.index')->with('success', 'Scholarship updated successfully.');

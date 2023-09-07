@@ -49,6 +49,9 @@
                         <form class="form" method="POST" action="/receipts/{{ $receipt->id }}">
                             @csrf
                             @method('PUT')
+                            <?php
+                            $date = date_create($receipt->date);
+                            ?>
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col-lg-6">
@@ -67,7 +70,8 @@
                                     <div class="col-lg-6">
                                         <label>Date:</label>
                                         <input name="date" type="text" class="form-control" id="kt_datepicker_1"
-                                            readonly="readonly" value="{{ $receipt->date }}" placeholder="Select date" />
+                                            readonly="readonly" value="{{ date_format($date, 'm/d/Y') }}"
+                                            placeholder="Select date" />
                                         <span class="form-text text-muted">Please select the date</span>
                                     </div>
                                     <div class="col-lg-6">
@@ -81,8 +85,9 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="typeSelect1">Amount:</label>
-                                            <input value="{{ $receipt->amount }}" required name="amount" type="number"
-                                                class="form-control" placeholder="Enter receipt amount" />
+                                            <input maxlength="9" pattern="[0-9]*" value="{{ $receipt->amount }}" required
+                                                name="amount" type="text" class="form-control"
+                                                placeholder="Enter receipt amount" />
                                             <span class="form-text text-muted">Please the receipt amount.</span>
                                         </div>
                                     </div>
@@ -90,10 +95,10 @@
                                         <div class="form-group">
                                             <label for="typeSelect1">Receipt Images:</label>
 
-                                            <input required multiple name="receipt[]" type="file" class="form-control"
+                                            <input multiple name="receipt[]" type="file" class="form-control"
                                                 placeholder="Enter receipt receipt" />
 
-                                            <span class="form-text text-muted">Please the receipt receipt.</span>
+                                            <span class="form-text text-muted">Please the receipt images.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +127,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <button type="submit" class="btn btn-primary mr-2">Update</button>
-                                        <a href="/" class="btn btn-secondary">Cancel</a>
+                                        <a href="/receipts" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </div>
                             </div>

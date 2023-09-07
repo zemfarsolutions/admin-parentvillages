@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Employee')
+@section('title', 'Edit Time Trackings')
 
 @section('content')
     <!--begin::Subheader-->
@@ -11,12 +11,12 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">Employees</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Time Trackings</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Edit Employee</a>
+                            <a href="#" class="text-muted">Edit Tracking</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -43,12 +43,15 @@
                     <!--begin::Card-->
                     <div class="card card-custom gutter-b example example-compact">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Employee</h3>
+                            <h3 class="card-title">Edit Tracking</h3>
                         </div>
                         <!--begin::Form-->
                         <form class="form" method="POST" action="/time-trackings/{{ $time_tracking->id }}">
                             @csrf
                             @method('PUT')
+                            <?php
+                            $date = date_create($time_tracking->date);
+                            ?>
                             <div class="card-body">
                                 <div class="form-group row">
                                     <div class="col-lg-6">
@@ -63,15 +66,16 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Date:</label>
-                                        <input name="date" value="{{ $time_tracking->date }}" type="text"
+                                        <input name="date" value="{{ date_format($date, 'm/d/Y') }}" type="text"
                                             class="form-control" id="kt_datepicker_1" readonly="readonly"
                                             placeholder="Select date" />
                                         <span class="form-text text-muted">Please select the date</span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Number Of Hours:</label>
-                                        <input required name="number_of_hours" value="{{ $time_tracking->number_of_hours }}"
-                                            type="number" class="form-control" placeholder="Enter contact number" />
+                                        <input maxlength="9" pattern="[0-9]*" required name="number_of_hours"
+                                            value="{{ $time_tracking->number_of_hours }}" type="text"
+                                            class="form-control" placeholder="Enter contact number" />
                                         <span class="form-text text-muted">Please enter total number of hours</span>
                                     </div>
                                 </div>
@@ -107,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <button type="submit" class="btn btn-primary mr-2">Update</button>
-                                        <a href="/" class="btn btn-secondary">Cancel</a>
+                                        <a href="/time-trackings" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </div>
                             </div>

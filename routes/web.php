@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/intakes', IntakeController::class)->except(['destroy']);
     Route::get('/intakes/{intake}/view', [IntakeController::class, 'view']);
+    Route::post('/intakes/delete/{intake}', [IntakeController::class, 'destroy']);
 
     Route::resource('/appointments', AppointmentController::class)->except(['destroy']);
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
@@ -73,10 +74,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/resources/{resource}/delete', [ResourceController::class, 'destroy']);
 
+    Route::get('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
     Route::get('/evaluations/accessibility/{evaluation:slug}', [AccessController::class, 'index']);
     Route::get('/evaluations/accessibility/create/{evaluation:slug}', [AccessController::class, 'create']);
     Route::post('/evaluations/accessibility/{evaluation}', [AccessController::class, 'store']);
-    Route::post('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
 
     Route::resource('/profile', ProfileController::class)->except(['store']);
     Route::get('/change-password', [ProfileController::class, 'password_index']);
@@ -84,6 +85,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/change-profile/{user}', [ProfileController::class, 'profileEdit']);
 
     Route::resource('/applicants', AppliedScholarshipController::class)->except(['show']);
-    Route::get('/applicants/{userapplication:slug}/view' ,[AppliedScholarshipController::class, 'show']);
-
+    Route::get('/applicants/{userapplication:slug}/view', [AppliedScholarshipController::class, 'show']);
 });

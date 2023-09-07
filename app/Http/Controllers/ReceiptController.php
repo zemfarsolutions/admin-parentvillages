@@ -109,6 +109,12 @@ class ReceiptController extends Controller
         return redirect()->route('receipts.index')->with('success', 'Receipt updated successfully.');
     }
 
+    public function show(EmployeeReceipt $receipt)
+    {
+        $images = $receipt->images;
+        return view('receipts.view', compact('images'));
+    }
+
     public function destroy(EmployeeReceipt $receipt)
     {
         $receipt->images()->delete();

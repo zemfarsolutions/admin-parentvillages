@@ -21,7 +21,8 @@ class Intake extends Model
         'postal_code',
         'gender',
         'language',
-        'age'
+        'age',
+        'signature'
     ];
 
     public function answers()

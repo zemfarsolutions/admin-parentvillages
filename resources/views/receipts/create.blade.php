@@ -78,8 +78,8 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="typeSelect1">Amount:</label>
-                                            <input required name="amount" type="number" class="form-control"
-                                                placeholder="Enter receipt amount" />
+                                            <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
+                                                class="form-control" placeholder="Enter receipt amount" />
                                             <span class="form-text text-muted">Please the receipt amount.</span>
                                         </div>
                                     </div>

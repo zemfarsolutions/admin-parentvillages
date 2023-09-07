@@ -42,7 +42,6 @@ class AccessController extends Controller
 
     public function destroy(Evaluation $evaluation)
     {
-        dd($evaluation);
         $evaluation->delete();
 
         return back();
