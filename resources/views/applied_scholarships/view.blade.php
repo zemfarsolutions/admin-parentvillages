@@ -11,15 +11,15 @@
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">Intake Details</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Application Details</h5>
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Intakes</a>
+                            <a href="/scholarships" class="text-muted">Scholarship</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Intake Details</a>
+                            <a href="/applicants" class="text-muted">Applicant Details</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -30,7 +30,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                {{-- <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Download</a> --}}
+                <a href="/applicants" class="btn btn-light-primary font-weight-bolder btn-sm">Go back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -49,282 +49,435 @@
                     <div class="row justify-content-center py-8 px-8 mt-10 px-md-0">
                         <div class="col-md-9">
                             <div class="d-flex justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
-                                <h1 class="display-4 font-weight-boldest mb-10">Intake Details</h1>
+                                <h1 class="display-4 font-weight-boldest mb-10">Application Details</h1>
                                 <div class="d-flex flex-column align-items-md-end px-0">
-
                                     <span class="d-flex flex-column align-items-md-end opacity-70">
-                                        <span class="font-weight-bold">{{ $userapplication->name }}</span>
+                                        <span class="font-weight-bold">{{ $userapplication->user->name }}</span>
                                     </span>
                                     <span class="d-flex flex-column align-items-md-end opacity-70">
-                                        {{-- <span>{{ $intake->email }}</span>
-                                        <span>{{ $intake->phone }}</span> --}}
+                                        <span>{{ $userapplication->user->email }}</span>
+                                        <span>{{ $userapplication->phone }}</span>
                                     </span>
                                 </div>
                             </div>
-                            {{-- <div class="border-bottom w-100"></div>
+                            <div class="border-bottom w-100"></div>
+                        </div>
+                    </div>
+                    <!-- end: Invoice header-->
+                    <!-- begin: Invoice body-->
+                    <div class="row justify-content-center py-5 px-8 py-md-5 px-md-0">
+                        <div class="col-md-9">
+                            <div class="d-flex justify-content-between pt-6">
+                                <h6 class="display-7 font-weight-boldest mb-5">Scholarship Information</h6>
+                            </div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Short Description</span>
+                                    <span class="opacity-70">{{ $userapplication->scholarship->short_description }}</span>
+                                </div>
+                            </div>
+                          
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Description</span>
+                                    <span class="opacity-70">{{ $userapplication->scholarship->full_description  }}</span>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Event Time</span>
+                                    <span class="opacity-70">{{ $userapplication->scholarship->event_date }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Dead Line</span>
+                                    <span class="opacity-70">{{ $userapplication->scholarship->deadline }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                </div>
+                            </div>
+                            <div class="border-bottom w-100 mt-5"></div>
+                        </div>
+                        <div class="col-md-9">
                             <div class="d-flex justify-content-between pt-6">
                                 <h6 class="display-7 font-weight-boldest mb-5">Personal Information</h6>
                             </div>
                             <div class="d-flex justify-content-between pt-6">
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Language</span>
-                                    <span class="opacity-70">{{ $intake->language }}</span>
+                                    <span class="font-weight-bolder mb-2">Name</span>
+                                    <span class="opacity-70">{{ $userapplication->name }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Gender</span>
-                                    <span class="opacity-70">{{ $intake->gender }}</span>
+                                    <span class="font-weight-bolder mb-2">Email</span>
+                                    <span class="opacity-70">{{ $userapplication->email }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Age</span>
-                                    <span class="opacity-70">{{ $intake->age }}</span>
+                                    <span class="font-weight-bolder mb-2">Date</span>
+                                    <span class="opacity-70">{{ $userapplication->date }}</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between pt-6">
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Street Address</span>
-                                    <span class="opacity-70">{{ $intake->address_1 }}</span>
+                                    <span class="font-weight-bolder mb-2">Address</span>
+                                    <span class="opacity-70">{{ $userapplication->address }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Street Address Line 2</span>
-                                    <span class="opacity-70">{{ $intake->address_2 }}</span>
+                                    <span class="font-weight-bolder mb-2">Appartment</span>
+                                    <span class="opacity-70">{{ $userapplication->appartment }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">City.</span>
-                                    <span class="opacity-70">{{ $intake->city }}</span>
+                                    <span class="font-weight-bolder mb-2">City</span>
+                                    <span class="opacity-70">{{ $userapplication->city }}</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between pt-6">
                                 <div class="d-flex flex-column flex-root">
                                     <span class="font-weight-bolder mb-2">State / Province</span>
-                                    <span class="opacity-70">{{ $intake->state }}</span>
+                                    <span class="opacity-70">{{ $userapplication->state }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
                                     <span class="font-weight-bolder mb-2">Postal Code</span>
-                                    <span class="opacity-70">{{ $intake->postal_code }}</span>
+                                    <span class="opacity-70">{{ $userapplication->postal_code }}</span>
                                 </div>
                                 <div class="d-flex flex-column flex-root">
                                 </div>
-                            </div> --}}
+                            </div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">High School</span>
+                                    <span class="opacity-70">{{ $userapplication->high_school }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Plan</span>
+                                    <span class="opacity-70">{{ $userapplication->plan }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <!--begin::Card-->
+                                    <div class="card card-custom gutter-b">
+                                        <div class="card-header border-0">
+                                            <h3 class="card-title"></h3>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center">
+                                                <!--begin: Icon-->
+                                                @if (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'pdf')
+                                                    <img alt="" class="max-h-55px" src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'png')
+                                                    <img alt="" class="max-h-55px" src="https://static.thenounproject.com/png/4147238-200.png" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'docx')
+
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'jpg' || pathinfo($userapplication->path, PATHINFO_EXTENSION) === 'jpeg')
+                                                    <img alt="" class="max-h-55px" src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'zip')
+                                                    <img alt="" class="max-h-55px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/zip.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'psd')
+                                                    <img alt="" class="max-h-55px"
+                                                        src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-adobe-photoshop-psd-ps-icon-png-image_4952703.png" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'xml')
+                                                    <img alt="" class="max-h-55px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'html')
+                                                    <img alt="" class="max-h-55px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @endif
+                                                <!--begin: Title-->
+                                                <a href="https://pvportal.wetestlink.com/public/assets/media/{{ $userapplication->award_letter }}" target="_blank"
+                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ 'Award letter' . '.' . pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) }}</a>    
+                                                <!--end: Tite-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end:: Card-->
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                    <!--begin::Card-->
+                                    <div class="card card-custom gutter-b card-stretch">
+                                        <div class="card-header border-0">
+                                            <h3 class="card-title"></h3>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
+                                                            </h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ...
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save
+                                                                changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center">
+                                                <!--begin: Icon-->
+                                                @if (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'pdf')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'png')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://static.thenounproject.com/png/4147238-200.png" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'docx')
+
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'jpg' || pathinfo($userapplication->path, PATHINFO_EXTENSION) === 'jpeg')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'zip')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/zip.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'psd')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-adobe-photoshop-psd-ps-icon-png-image_4952703.png" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'xml')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'html')
+                                                    <img alt="" class="max-h-65px"
+                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                @endif
+                                                <!--begin: Title-->
+                                                <a href="{{ $userapplication->transcript_letter }}" target="_blank"
+                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ 'Transcript letter' . '.' . pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) }}</a>    
+                                                <!--end: Tite-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end:: Card-->
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
-                    <!-- end: Invoice header-->
-                    <!-- begin: Invoice body-->
-                    {{-- <div class="row justify-content-center py-5 px-8 py-md-5 px-md-0">
+                        <!-- Guardians Information Start-->
                         <div class="col-md-9">
-                            <div class="border-bottom w-100"></div> --}}
-                            {{-- <div class="d-flex justify-content-between pt-6">
-                                <h6 class="display-7 font-weight-boldest mb-5">Personal Information</h6>
-                            </div> --}}
-                            {{-- <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Prefered way of Contact?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(1) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">How did you hear about us?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(2) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Would you like to remain anonymous?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(3) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
+                            <div class="border-bottom w-100"></div>
                             <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Race and Ethnicity?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(4) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Would it be best if you had an interpreter?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(5) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Do you have a disability?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(6) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
+                                <h6 class="display-7 font-weight-boldest mb-5">Guardians Information</h6>
                             </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Do you feel that you are in danger?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(7) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
+                            @foreach ($userapplication->guardians as $guardian)
+                                <div class="d-flex justify-content-between pt-5">
+                                    <h6 class=" font-weight-boldest mb-5">{{$loop->iteration}} ) Guardian Details</h6>
                                 </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Have you or your child(ren) or family member been
-                                        affected by any act of violence or crime? Are you or your child(ren) a victim of
-                                        violence or crime?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(8) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
+                                <div class="d-flex justify-content-between pt-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Name</span>
+                                        <span class="opacity-70">{{ $guardian->name }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Email</span>
+                                        <span class="opacity-70">{{ $guardian->email }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Phone</span>
+                                        <span class="opacity-70">{{ $guardian->phone }}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">There are many acts of crime or violence we do not
-                                        always think of. Please check if you or your child(ren) or a family member have been
-                                        affected by any of the following</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(9) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
+                                <div class="d-flex justify-content-between pt-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Address</span>
+                                        <span class="opacity-70">{{ $guardian->address }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <label class="font-weight-bold">Guardian's Highest level of :</label>
+                                        <div class="timeline-label">
+                                            @if ($guardian->high_school_diploma !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">High School Diploma</span>
+                                                    </div>
+                                                </div>    
+                                            @endif
+                                            @if ($guardian->associate_degree !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">Associate Degree</span>
+                                                    </div>
+                                                </div>    
+                                            @endif
+                                            @if ($guardian->bachelor_degree !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">Bachelor Degree</span>
+                                                    </div>
+                                                </div>    
+                                            @endif
+                                            @if ($guardian->master_degree !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">Master Degree</span>
+                                                    </div>
+                                                </div>    
+                                            @endif
+                                            @if ($guardian->doctoral_degree !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">Doctoral Degree</span>
+                                                    </div>
+                                                </div>    
+                                            @endif
+                                            @if ($guardian->none !== 0)
+                                                <div class="timeline-item d-flex">
+                                                    <div class="timeline-badge">
+                                                        <i class="fa fa-genderless text-success fs-1"></i>
+                                                    </div>
+                                                    <div class="timeline-content pl-2">
+                                                        <span class="fw-bold text-gray-800 ps-3">None</span>
+                                                    </div>
+                                                </div>    
+                                            @endif              
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root"></div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What services are you looking for?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(10) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Are any of your needs a result of being a victim
-                                        of a crime?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(11) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Are you in need of financial assistance for any
-                                        of the following, or have you had to pay for any of these services due to being a
-                                        victim or a family member of a victim of crime in Massachusetts within the last
-                                        three years?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(12) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Do the expenses of services prevent you or a
-                                        family member from not currently receiving mental health/clinical/therapeutic
-                                        services?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(13) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Are you receiving public assistance (SNAP, WIC,
-                                        TANF, SSI)?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(14) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What services are you looking for?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(15) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">How many children do you need childcare
-                                        for?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(16) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What area of education are you looking for
-                                        resources/services for?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(17) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Do you have a voucher?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(18) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What is/are the age(s)?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(19) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Would you like to share any additional
-                                        information?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(20) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">If you have a program(s) in mind, please list
-                                        them below.</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(21) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Where is your location (zip code)?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(22) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What type of childcare are you looking
-                                        for?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(23) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">What days are you in need of childcare?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(24) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">How many hours per day will you need childcare?
-                                        What time(s) of the day?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(25) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Will you need transportation as well?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(26) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between pt-6">
-                                <div class="d-flex flex-column flex-root">
-                                    <span class="font-weight-bolder mb-2">Would you like to add any other information
-                                        regarding childcare?</span>
-                                    @foreach ($intake->GetAnswersByQuestionId(27) as $item)
-                                        <span class="opacity-70">{{ $item['answer'] }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
+                                <div class="border-bottom w-100 mt-5"></div>
+                            @endforeach
+                          
                         </div>
-                    </div> --}}
+                        <!-- Guardians Information End-->
+
+                        <!-- Reference Information Start-->
+                        <div class="col-md-9">
+                            <div class="border-bottom w-100"></div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <h6 class="display-7 font-weight-boldest mb-5">References Information</h6>
+                            </div>
+                            @foreach ($userapplication->references as $refernce)
+                                <div class="d-flex justify-content-between pt-5">
+                                    <h6 class=" font-weight-boldest mb-5">{{$loop->iteration}} ) Refernce Details</h6>
+                                </div>
+                                <div class="d-flex justify-content-between pt-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Name</span>
+                                        <span class="opacity-70">{{ $refernce->name }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Email</span>
+                                        <span class="opacity-70">{{ $refernce->email }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Phone</span>
+                                        <span class="opacity-70">{{ $refernce->phone }}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between pt-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Relation</span>
+                                        <span class="opacity-70">{{ $refernce->relation }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2">Relation Years</span>
+                                        <span class="opacity-70">{{ $refernce->length }}</span>
+                                    </div>
+                                    <div class="d-flex flex-column flex-root"></div>
+                                </div>
+                                <div class="d-flex justify-content-between pt-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom gutter-b card-stretch">
+                                            <div class="card-header border-0">
+                                                <h3 class="card-title"></h3>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
+                                                                </h1>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ...
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="d-flex flex-column align-items-center">
+                                                    <!--begin: Icon-->
+                                                    @if (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'pdf')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'png')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="	https://static.thenounproject.com/png/4147238-200.png" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'docx')
+    
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'jpg' || pathinfo($userapplication->path, PATHINFO_EXTENSION) === 'jpeg')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'zip')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/zip.svg" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'psd')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-adobe-photoshop-psd-ps-icon-png-image_4952703.png" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'xml')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                    @elseif (pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) === 'html')
+                                                        <img alt="" class="max-h-65px"
+                                                            src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                    @endif
+                                                    <!--begin: Title-->
+                                                    <a href="{{ $userapplication->letter }}" target="_blank"
+                                                        class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ 'Reference Letter' . '.' . pathinfo($userapplication->award_letter, PATHINFO_EXTENSION) }}</a>    
+                                                    <!--end: Tite-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end:: Card-->
+                                    </div>
+                                    <div class="d-flex flex-column flex-root">
+                                    </div>
+                                </div>
+                                <div class="border-bottom w-100 mt-5"></div>
+                            @endforeach
+                          
+                        </div>
+                        <!-- Reference Information End-->
+                    </div>
                     <!-- end: Invoice body-->
                     <!-- end: Invoice-->
                 </div>
