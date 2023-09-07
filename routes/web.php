@@ -14,7 +14,8 @@ use App\Http\Controllers\{
     ReceiptController,
     ExpenseController,
     IntakeController,
-    ResourceController
+    ResourceController,
+    ProfileController
 };
 
 /*
@@ -39,9 +40,11 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     });
 
-    Route::resource('/users', UserController::class);   
+    Route::resource('/users', UserController::class)->except(['destroy']);
+    Route::post('/users/delete/{user}', [UserController::class, 'destroy']);
 
-    Route::resource('/employees', EmployeeController::class);
+    Route::resource('/employees', EmployeeController::class)->except(['destroy']);
+    Route::post('/employees/delete/{employee}', [EmployeeController::class, 'destroy']);
 
     Route::resource('/time-trackings', TimeTrackingController::class)->except(['destroy']);
     Route::post('/time-trackings/delete/{time_tracking}', [TimeTrackingController::class, 'destroy']);
@@ -73,4 +76,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/evaluations/accessibility/create/{evaluation:slug}', [AccessController::class, 'create']);
     Route::post('/evaluations/accessibility/{evaluation}', [AccessController::class, 'store']);
     Route::post('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
+
+    Route::resource('/profile', ProfileController::class)->except(['store']);
+    Route::get('/change-password', [ProfileController::class, 'password_index']);
+    Route::post('/change-password/{user}', [ProfileController::class, 'passwordEdit']);
+    Route::post('/change-profile/{user}', [ProfileController::class, 'profileEdit']);
 });

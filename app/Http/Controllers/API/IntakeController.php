@@ -10,7 +10,7 @@ class IntakeController extends Controller
 {
     public function index()
     {
-        $records = Intake::with('user')->get();
+        $records = Intake::with('user')->orderBy('id', 'DESC')->get();
 
         return $records;
     }
