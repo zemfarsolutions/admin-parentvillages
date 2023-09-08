@@ -26,6 +26,11 @@ class UserApplication extends Model
         return $this->hasMany(UserApplicationGuardian::class, 'user_application_id', 'id');
 
     }
+    public function answers(){
+
+        return $this->hasMany(UserApplicationAnswer::class, 'user_application_id', 'id');
+
+    }
     public function references(){
         
         return $this->hasMany(UserApplicationReference::class, 'user_application_id', 'id');

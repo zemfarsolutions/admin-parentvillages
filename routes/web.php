@@ -68,6 +68,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
 
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
+    Route::get('/scholarships/{scholarship}/delete', [ScholarshipController::class, 'destroy']);
+
 
     Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
     Route::get('/evaluations/delete/{evaluation}', [EvaluationController::class, 'destroy']);
