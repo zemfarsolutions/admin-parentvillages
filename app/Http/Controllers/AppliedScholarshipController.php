@@ -16,8 +16,19 @@ class AppliedScholarshipController extends Controller
     }
 
     public function show(UserApplication $userapplication){
-        // dd($userapplication->guardians);
-        // $records =UserApplication::with('user','guardians','references')->get()->toArray();
         return view('applied_scholarships.view', compact('userapplication'));
+    }
+
+    public function acceptStatus(UserApplication $userApplication){
+        $userApplication->update([
+            'status' => 'accept'
+        ]);
+        return back()->with('success','Application has been accepted');
+    }
+    public function rejectStatus(UserApplication $userApplication){
+        $userApplication->update([
+            'status' => 'reject'
+        ]);
+        return back()->with('success','Application has been rejected');
     }
 }

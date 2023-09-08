@@ -90,4 +90,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/applicants', AppliedScholarshipController::class)->except(['show']);
     Route::get('/applicants/{userapplication:slug}/view', [AppliedScholarshipController::class, 'show']);
+    Route::get('/scholarship-applications/{userApplication}/accept', [AppliedScholarshipController::class, 'acceptStatus']);
+    Route::get('/scholarship-applications/{userApplication}/reject', [AppliedScholarshipController::class, 'rejectStatus']);
+    
+    
 });

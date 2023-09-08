@@ -544,7 +544,7 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">Intake Form</span>
+                                    <span class="menu-text">Intake Management</span>
                                     <i class="menu-arrow"></i>
                                 </a>
                                 <div class="menu-submenu">
@@ -642,7 +642,7 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
-                                    <span class="menu-text">Applied Scholarships</span>
+                                    <span class="menu-text">Scholarship Applications</span>
                                 </a>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -1149,7 +1149,7 @@
                                                             </svg>
                                                             <!--end::Svg Icon-->
                                                         </span>
-                                                        <span class="menu-text">Applied Scholarships</span>
+                                                        <span class="menu-text">Scholarship Applications</span>
                                                     </a>
                                                 </li>
                                                 <li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
