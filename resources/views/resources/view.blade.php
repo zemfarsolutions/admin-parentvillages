@@ -16,7 +16,7 @@
                 <!--end::Separator-->
                 <!--begin::Search Form-->
                 <div class="d-flex align-items-center" id="kt_subheader_search">
-                    <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ $resource->reviews->count() }}
+                    <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ $document->reviews->count() }}
                         Total</span>
                     <form class="ml-5">
                         <div class="input-group input-group-sm input-group-solid" style="max-width: 175px">
@@ -30,7 +30,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Button-->
-                <a href="/resources" class="btn btn-light-primary font-weight-bold btn-sm px-4 font-size-base ml-2">Go
+                <a href="/admin/documents" class="btn btn-light-primary font-weight-bold btn-sm px-4 font-size-base ml-2">Go
                     Back</a>
                 <!--end::Button-->
             </div>
@@ -47,13 +47,14 @@
                 <!--begin::Header-->
                 <div class="card-header flex-wrap border-0 pt-6 pb-0">
                     <div class="card-title">
-                        <h3 class="card-label">{{ $resource->name }}
+                        <h3 class="card-label">Reviews
                             <span class="d-block text-muted pt-2 font-size-sm">Document Access management made easy</span>
                         </h3>
                     </div>
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="/resources/reviews/create/{{ $resource->id }}" class="btn btn-primary font-weight-bolder">
+                        <a href="/admin/documents/reviews/create/{{ $document->id }}"
+                            class="btn btn-primary font-weight-bolder">
                             <span class="svg-icon svg-icon-md">
                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

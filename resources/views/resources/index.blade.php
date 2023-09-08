@@ -21,7 +21,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="/resources" class="text-muted">Resources</a>
+                            <a href="/admin/documents" class="text-muted">Resources</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -32,7 +32,8 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/resources/create" target="_blank" class="btn btn-light-primary font-weight-bolder btn-sm">Add
+                <a href="/admin/documents/create" target="_blank"
+                    class="btn btn-light-primary font-weight-bolder btn-sm">Add
                     Document</a>
                 <!--end::Actions-->
             </div>
@@ -82,7 +83,8 @@
                                                                 </span>
                                                             </li>
                                                             <li class="navi-item">
-                                                                <a href="/resources/{{ $record->id }}" class="navi-link">
+                                                                <a href="/admin/documents/{{ $record->id }}"
+                                                                    class="navi-link">
                                                                     <span class="navi-icon">
                                                                         <i class="flaticon2-user"></i>
                                                                     </span>
@@ -90,7 +92,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="navi-item">
-                                                                <a href="/resources/{{ $record->id }}/delete"
+                                                                <a href="/admin/documents/{{ $record->id }}/delete"
                                                                     class="navi-link">
                                                                     <span class="navi-icon">
                                                                         <i class="flaticon2-trash"></i>
@@ -100,29 +102,6 @@
                                                             </li>
                                                         </ul>
                                                         <!--end::Navigation-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
-                                                            </h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            ...
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -156,7 +135,7 @@
                                                 @endif
                                                 <!--begin: Title-->
                                                 <a href="{{ $record->path }}" target="_blank"
-                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ $record->name . '.' . pathinfo($record->path, PATHINFO_EXTENSION) }}</a>    
+                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ $record->name . '.' . pathinfo($record->path, PATHINFO_EXTENSION) }}</a>
                                                 <!--end: Tite-->
                                             </div>
                                         </div>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resource;
+use App\Models\User;
+use App\Models\UserDocument;
+use App\Models\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -46,24 +49,44 @@ class ResourceController extends Controller
             'path' => $path
         ]);
 
-        return redirect()->route('resources.index')->with('success', 'Resource uploaded successfully.');
+        return redirect()->route('documents.index')->with('success', 'Resource uploaded successfully.');
     }
 
-    public function show(Resource $resource)
+    public function show(Resource $document)
     {
-        return view('resources.view', compact('resource'));
+        return view('resources.view', compact('document'));
     }
 
-    public function destroy(Resource $resource)
+    public function destroy(Resource $document)
     {
-        $resource->reviews()->delete();
-        $resource->delete();
+        $document->reviews()->delete();
+        $document->delete();
 
-        return redirect()->route('resources.index')->with('error', 'Resource deleted successfully.');
+        return redirect()->route('documents.index')->with('error', 'Resource deleted successfully.');
     }
 
-    public function showCreateForm(Request $request)
+    public function showCreateForm(Resource $document)
     {
-        return view('resources.create-review');
+        $users = User::all();
+        $id = $document->id;
+        return view('resources.create-review', compact('users', 'id'));
+    }
+
+    public function storeReview(Request $request)
+    {
+        UserResource::create([
+            'user_id' => $request->user_id,
+            'resource_id' => $request->resource_id,
+            'description' => $request->description
+        ]);
+
+        return back()->with('success', 'Review added successfully.');
+    }
+
+    public function destroyReview(UserResource $review)
+    {
+        $review->delete();
+
+        return back()->with('error', 'Review deleted successfully.');
     }
 }

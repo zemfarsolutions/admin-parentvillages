@@ -30,7 +30,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/resources" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
+                <a href="/admin/documents" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -50,19 +50,24 @@
                         </div>
                         <!--begin::Form-->
                         <form class="form" method="POST" enctype="multipart/form-data"
-                            action="{{ route('resources.store') }}">
+                            action="{{ route('review.store') }}">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
+                                    <input type="hidden" name="resource_id" value="{{ $id }}">
                                     <div class="col-lg-6">
-                                        <label>Document Name:</label>
-                                        <input name="name" type="text" class="form-control" />
-                                        <span class="form-text text-muted">Please enter name</span>
+                                        <label>Select Client:</label>
+                                        <select name="user_id" class="form-control">
+                                            @foreach ($users as $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-
-                                    <div class="col-lg-6">
-                                        <label>Document:</label>
-                                        <input name="file" type="file" class="form-control" />
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="description">Description</label>
+                                        <textarea name="description" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

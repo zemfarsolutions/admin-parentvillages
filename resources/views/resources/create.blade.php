@@ -16,7 +16,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="/resources/create" class="text-muted">Add Resource</a>
+                            <a href="/admin/documents/create" class="text-muted">Add Resource</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -27,7 +27,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/resources" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
+                <a href="/admin/documents" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -47,7 +47,7 @@
                         </div>
                         <!--begin::Form-->
                         <form class="form" method="POST" enctype="multipart/form-data"
-                            action="{{ route('resources.store') }}">
+                            action="{{ route('documents.store') }}">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">

@@ -69,10 +69,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
 
     Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
-    Route::resource('/resources', ResourceController::class)->except(['destroy']);
-    Route::get('/resources/reviews/create/{id}', [ResourceController::class, 'showCreateForm']);
 
-    Route::get('/resources/{resource}/delete', [ResourceController::class, 'destroy']);
+    Route::resource('/admin/documents', ResourceController::class)->except(['destroy']);
+    Route::get('/admin/documents/reviews/create/{document}', [ResourceController::class, 'showCreateForm']);
+    Route::post('/admin/documents/reviews', [ResourceController::class, 'storeReview'])->name('review.store');
+    Route::post('/admin/documents/reviews/delete/{review}', [ResourceController::class, 'destroyReview'])->name('review.delete');
+    Route::get('/admin/documents/{document}/delete', [ResourceController::class, 'destroy']);
 
     Route::get('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
     Route::get('/evaluations/accessibility/{evaluation:slug}', [AccessController::class, 'index']);

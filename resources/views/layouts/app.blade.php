@@ -724,7 +724,7 @@
                                     <ul class="menu-subnav">
                                         <li class="menu-item {{ gettype(strpos(url()->full(), '/resources/create')) == 'integer' ? 'menu-item-active' : null }}"
                                             aria-haspopup="true">
-                                            <a href="/resources/create" class="menu-link">
+                                            <a href="/admin/documents/create" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
@@ -733,7 +733,7 @@
                                         </li>
                                         <li class="menu-item {{ gettype(strpos(url()->full(), '/resources')) == 'integer' ? 'menu-item-active' : null }}"
                                             aria-haspopup="true">
-                                            <a href="/resources" class="menu-link">
+                                            <a href="/admin/documents" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
