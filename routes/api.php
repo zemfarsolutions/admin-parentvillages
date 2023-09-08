@@ -40,3 +40,5 @@ Route::get('/get-appointments', [Appointment::class, 'index']);
 Route::get('/get-resources/{resource}', [AdminResource::class, 'index']);
 Route::get('/get-accessibility/{evaluation:slug}', [Accessibility::class, 'index']);
 Route::get('/get-applied-scholarships', [AppliedScholarships::class, 'index']);
+Route::get('/get-milaege', [MileageLog::class, 'milage_chart']);
+

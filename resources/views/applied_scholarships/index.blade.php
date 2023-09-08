@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Applicants')
+@section('title', 'Scholarship Applications')
 
 @section('content')
     <!--begin::Subheader-->
@@ -9,7 +9,7 @@
             <!--begin::Details-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Applied Scholarships</h5>
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Scholarship Application</h5>
                 <!--end::Title-->
                 <!--begin::Separator-->
                 <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
@@ -71,9 +71,8 @@
                 <!--begin::Header-->
                 <div class="card-header flex-wrap border-0 pt-6 pb-0">
                     <div class="card-title">
-                        <h3 class="card-label">Applied Scholarship Managements
-                            <span class="d-block text-muted pt-2 font-size-sm">Applied Scholarship management made
-                                easy</span>
+                        <h3 class="card-label">Scholarship Applications Management
+                            <span class="d-block text-muted pt-2 font-size-sm">Scholarship Applications Management made easy</span>
                         </h3>
                     </div>
 

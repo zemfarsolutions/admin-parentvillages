@@ -9,6 +9,10 @@ class UserApplication extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'status'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
@@ -20,6 +24,11 @@ class UserApplication extends Model
     public function guardians(){
 
         return $this->hasMany(UserApplicationGuardian::class, 'user_application_id', 'id');
+
+    }
+    public function answers(){
+
+        return $this->hasMany(UserApplicationAnswer::class, 'user_application_id', 'id');
 
     }
     public function references(){

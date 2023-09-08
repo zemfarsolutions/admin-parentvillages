@@ -36,9 +36,9 @@ class EvaluationController extends Controller
 
         $fileName = Str::slug($request->name) . '.' . $request->file->extension();
 
-        $request->file->move(public_path('admin/evaluations'), $fileName);
+        $request->file->move(public_path('assets/media/admin/evaluations'), $fileName);
 
-        $path = '/admin/evaluations/' . $fileName;
+        $path = 'assets/media/admin/evaluations/' . $fileName;
 
         Evaluation::create([
             'admin_id' => Auth::user()->id,
@@ -48,5 +48,13 @@ class EvaluationController extends Controller
         ]);
 
         return redirect()->route('evaluations.index')->with('success', 'Document uploaded successfully.');
+    }
+
+    public function destroy(Evaluation $evaluation){
+
+        $evaluation->delete();
+
+        return back()->with('success','Deleted Succesfully');
+        
     }
 }

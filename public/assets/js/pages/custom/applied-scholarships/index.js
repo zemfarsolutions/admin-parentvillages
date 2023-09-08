@@ -145,7 +145,7 @@ var KTAppsUsersListDatatable = function() {
 					field: 'Actions',
 					title: 'Actions',
 					sortable: false,
-					width: 130,
+					width: 150,
 					overflow: 'visible',
 					autoHide: false,
 					template: function(data) {

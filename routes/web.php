@@ -18,6 +18,7 @@ use App\Http\Controllers\{
     ResourceController,
     ProfileController
 };
+use App\Models\Evaluation;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,8 +68,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
 
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
+    Route::get('/scholarships/{scholarship}/delete', [ScholarshipController::class, 'destroy']);
+
 
     Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
+    Route::get('/evaluations/delete/{evaluation}', [EvaluationController::class, 'destroy']);
 
     Route::resource('/admin/documents', ResourceController::class)->except(['destroy']);
     Route::get('/admin/documents/reviews/create/{document}', [ResourceController::class, 'showCreateForm']);
@@ -88,4 +92,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/applicants', AppliedScholarshipController::class)->except(['show']);
     Route::get('/applicants/{userapplication:slug}/view', [AppliedScholarshipController::class, 'show']);
+    Route::get('/scholarship-applications/{userApplication}/accept', [AppliedScholarshipController::class, 'acceptStatus']);
+    Route::get('/scholarship-applications/{userApplication}/reject', [AppliedScholarshipController::class, 'rejectStatus']);
+    
+    
 });
