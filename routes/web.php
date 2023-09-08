@@ -18,6 +18,7 @@ use App\Http\Controllers\{
     ResourceController,
     ProfileController
 };
+use App\Models\Evaluation;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
 
     Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
+    Route::get('/evaluations/delete/{evaluation}', [EvaluationController::class, 'destroy']);
 
     Route::resource('/admin/documents', ResourceController::class)->except(['destroy']);
     Route::get('/admin/documents/reviews/create/{document}', [ResourceController::class, 'showCreateForm']);
