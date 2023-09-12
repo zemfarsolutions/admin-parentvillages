@@ -95,17 +95,17 @@ var KTApexChartsDemo = function () {
     var _expenseChart = function () {
 		const apexChart = "#expense_chart";
 
-        // $.ajax({
-        //     url:HOST_URL + '/api/get-expense?id='+user_id,
-        //     method : 'GET',
-        //     success:function(response){
-        //         const total_amount = response['data']['total_amount'];
-        //         const months = response['data']['months'];
+        $.ajax({
+            url:HOST_URL + 'api/get-expense',
+            method : 'GET',
+            success:function(response){
+                const total_amount = response['data']['total_amount'];
+                const months = response['data']['months'];
 
                 var options = {
                     series: [{
                         name: 'Total Amount',
-                        data: [25,30,35,40,45,55,65,100]
+                        data: total_amount
                     }],
                     chart: {
                         type: 'bar',
@@ -130,7 +130,7 @@ var KTApexChartsDemo = function () {
                         colors: ['transparent']
                     },
                     xaxis: {
-                        categories: ['Januaray','Feburary','March','April','May','June','July','August'],
+                        categories: months,
                     },
                     yaxis: {
                         title: {
@@ -152,8 +152,8 @@ var KTApexChartsDemo = function () {
         
                 var chart = new ApexCharts(document.querySelector(apexChart), options);
                 chart.render();
-        //     }
-        // });
+            }
+        });
 		
 	}
 	// var _timeTrackingChart = function () {

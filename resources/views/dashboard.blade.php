@@ -148,7 +148,7 @@
                     <!--end::Body-->
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <!--begin::Card-->
                 <div class="card card-custom card-stretch card-stretch-half gutter-b" style="height: 100%">
                     <div class="card-header">
