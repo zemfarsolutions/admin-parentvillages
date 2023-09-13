@@ -125,7 +125,6 @@ var KTAppsUsersListDatatable = function() {
 				}],
 		});
 
-		console.log(datatable);
 		$('#kt_datatable_search_status').on('change', function() {
 			datatable.search($(this).val().toLowerCase(), 'Status');
 		});
