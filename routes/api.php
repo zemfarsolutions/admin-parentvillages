@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Accessibility;
+use App\Http\Controllers\API\Admin;
 use App\Http\Controllers\API\Appointment;
 use App\Http\Controllers\API\Client;
 use App\Http\Controllers\API\EmployeeController;
@@ -43,3 +44,4 @@ Route::get('/get-appointments', [Appointment::class, 'index']);
 Route::get('/get-resources/{resource}', [AdminResource::class, 'index']);
 Route::get('/get-accessibility/{evaluation:slug}', [Accessibility::class, 'index']);
 Route::get('/get-applied-scholarships', [AppliedScholarships::class, 'index']);
+Route::get('/get-admins', [Admin::class, 'index']);
