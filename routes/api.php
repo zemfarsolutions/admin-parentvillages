@@ -32,13 +32,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/get-users', [Client::class, 'index']);
 Route::get('/get-employees', [EmployeeController::class, 'index']);
 Route::get('/get-time-trackings', [TimeTracking::class, 'index']);
+Route::get('/get-milaege', [MileageLog::class, 'milage_chart']);
 Route::get('/get-mileage-logs', [MileageLog::class, 'index']);
 Route::get('/get-receipts', [Receipt::class, 'index']);
 Route::get('/get-expenses', [Expense::class, 'index']);
+Route::get('/get-expense', [Expense::class, 'expense_chart']);
 Route::get('/get-intakes', [IntakeController::class, 'index']);
+Route::get('/get-limited-intakes', [IntakeController::class, 'limitedIntakes']);
 Route::get('/get-appointments', [Appointment::class, 'index']);
 Route::get('/get-resources/{resource}', [AdminResource::class, 'index']);
 Route::get('/get-accessibility/{evaluation:slug}', [Accessibility::class, 'index']);
 Route::get('/get-applied-scholarships', [AppliedScholarships::class, 'index']);
-Route::get('/get-milaege', [MileageLog::class, 'milage_chart']);
-Route::get('/get-expense', [Expense::class, 'expense_chart']);

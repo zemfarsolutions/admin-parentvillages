@@ -14,4 +14,14 @@ class IntakeController extends Controller
 
         return $records;
     }
+
+    public function limitedIntakes(){
+        $records = Intake::with('user')->orderBy('created_at', 'DESC')
+                            ->offset(0)
+                            ->limit(3)
+                            ->get();
+
+        return $records;
+    }
+
 }
