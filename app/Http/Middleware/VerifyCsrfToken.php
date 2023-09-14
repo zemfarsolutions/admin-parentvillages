@@ -21,6 +21,7 @@ class VerifyCsrfToken extends Middleware
         '/appointments/delete/*',
         '/admin/documents/reviews/delete/*',
         '/intakes/delete/*',
-        '/evaluations/accessibility/delete/*'
+        '/evaluations/accessibility/delete/*',
+        'admins/*/delete'
     ];
 }

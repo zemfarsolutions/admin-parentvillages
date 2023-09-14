@@ -20,6 +20,7 @@ class AuthController extends Controller
         $credentials = [
             'email' => $request->email,
             'password' => $request->password,
+            'status' => 'Active'
         ];
 
         if (Auth::guard('web')->attempt($credentials)) {

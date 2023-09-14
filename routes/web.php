@@ -50,7 +50,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/change-password/{user}', [ProfileController::class, 'passwordEdit']);
         Route::post('/change-profile/{user}', [ProfileController::class, 'profileEdit']);
 
-        Route::resource('/admins', AdminController::class);
+        Route::resource('/admins', AdminController::class)->except(['destroy']);
+        Route::get('/admins/{admin}/view', [AdminController::class, 'view']);
+        Route::post('/admins/{admin}/delete', [AdminController::class, 'destroy']);
+
 
     // Admin Mangement Routes End
 

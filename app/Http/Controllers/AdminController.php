@@ -47,7 +47,39 @@ class AdminController extends Controller
         return back()->with('success','Admin has been created');
     }
 
-    public function show(){
+    public function view(Admin $admin){
+        return view('admins.view', compact('admin'));
+    }
+
+    public function edit(Admin $admin){
+        return view('admins.edit', compact('admin'));
+    }
+
+    public function update(Admin $admin , Request $request){
         
+        $validated = Validator::make($request->all(),[
+            'name' => 'required',
+            'email' => 'required'
+            ],
+        );
+        if ($validated->fails()) {
+            return back()
+            ->withErrors($validated)
+            ->withInput();
+        }
+        $admin->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'status' => $request->status
+        ]);
+
+        return redirect()->route('admins.index')->with('success', 'Admin updated successfully.');
+    }
+
+    public function destroy(Admin $admin){
+        $admin->update([
+            'status' => 'Inactive',
+        ]);
+        return redirect()->route('admins.index')->with('success','Deleted Successfully');
     }
 }
