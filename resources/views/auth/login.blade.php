@@ -74,7 +74,75 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!--begin::Main-->
-    <div class="d-flex flex-column flex-root">
+    <div class="flex-container " >
+        <div class="login--bg--pattern left-side">
+            <div class="text-center">
+                <img src="https://ml5qkd9yohde.i.optimole.com/w:253/h:73/q:mauto/f:avif/https://parentvillage.wetestlink.com/wp-content/uploads/2023/06/Untitled-1-2-1.png" class="" alt="" />
+            </div>
+            <div class="">
+                <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #ffffff;">
+                    Discover Amazing Support
+                    <br />and Opportunities from <br /> Parent Villages.
+                </h3>
+            </div>
+        </div>
+        <div class="right-side bg-white">
+            <div >
+                <form class="form" novalidate="novalidate" id="kt_login_signin_form">
+                    <!--begin::Title-->
+                    <div class="pb-13 pt-lg-0 pt-5">
+                        <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Parent
+                            Villages</h3>
+                    </div>
+                    <!--begin::Title-->
+    
+                    <input type="hidden" id="l_token" value="{{ csrf_token() }}">
+    
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
+                        <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
+                            id="l_email" type="text" name="username" autocomplete="off" />
+                    </div>
+                    <!--end::Form group-->
+                    <!--begin::Form group-->
+                    <div class="form-group">
+                        {{-- <div class="d-flex justify-content-between mt-n5"> --}}
+                            <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+                        {{-- </div> --}}
+                        <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
+                            type="password" id="l_password" name="password" autocomplete="off" />
+                    </div>
+                    <!--end::Form group-->
+    
+                    <!--begin::Action-->
+                    <div class="pb-lg-0 pb-5">
+                        <button type="button" id="kt_login_signin_submit"
+                            class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
+                            In</button>
+                    </div>
+                    <!--end::Action-->
+                </form>
+            </div>
+            <div class="login-footer">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                
+                <div class="text-dark-50 font-size-lg font-weight-bolder mr-10">
+                    <span class="mr-1">2023©</span>
+                    <a href="/" target="_blank" class="text-dark-75 text-hover-primary">Parent
+                        Villages</a>
+                </div>
+                <a href="#" class="text-primary font-weight-bolder font-size-lg">Terms</a>
+                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Plans</a>
+                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
         <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
             id="kt_login">
@@ -167,7 +235,7 @@
             <!--end::Content-->
         </div>
         <!--end::Login-->
-    </div>
+    </div> --}}
     <!--end::Main-->
     <script>
         var HOST_URL = "http://127.0.0.1:8000";

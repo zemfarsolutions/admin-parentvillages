@@ -62760,3 +62760,40 @@ body {
     left: 265px; }
   .aside-enabled.aside-minimize.footer-fixed .footer {
     left: 70px; } }
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      font-size: 30px;
+      text-align: center;
+      height: 100vh;
+    }
+    .left-side{
+      width: 35%;
+      height: 100%;
+      padding : 20% 0;
+
+    }
+    .right-side{
+      width: 65%;
+      height: 100%;
+      padding : 15% 15%;
+
+    }
+    @media (max-width: 400px) {
+      .flex-container {
+        flex-direction: column;
+      }
+      .left-side{
+        width: 100%;
+        height: 35%;
+        padding : 10% 0;
+      }
+      .right-side{
+        width: 100%;
+        height: 65%;
+        padding : 5% 5%;
+      }
+    }
+    /* style="height: 100vh;align-items: center;"
+    style="height: 100vh;align-items: center;" */
