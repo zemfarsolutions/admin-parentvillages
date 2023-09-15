@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('admin_id')->constrained();
             $table->string('title');
+            $table->text('slug')->unique();
             $table->text('short_description');
             $table->text('full_description');
             $table->date('deadline');

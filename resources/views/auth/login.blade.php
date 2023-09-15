@@ -1,6 +1,23 @@
+
 <!DOCTYPE html>
+<!--
+Template Name: Metronic - Bootstrap 4 HTML, React, Angular 10 & VueJS Admin Dashboard Theme
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: https://1.envato.market/EA4JP
+Renew Support: https://1.envato.market/EA4JP
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!--begin::Head-->
+
+<!-- Mirrored from preview.keenthemes.com/metronic/demo1/custom/pages/login/login-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Nov 2020 05:33:51 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
     <!-- Google Tag Manager -->
@@ -74,75 +91,7 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!--begin::Main-->
-    <div class="flex-container " >
-        <div class="login--bg--pattern left-side">
-            <div class="text-center">
-                <img src="https://ml5qkd9yohde.i.optimole.com/w:253/h:73/q:mauto/f:avif/https://parentvillage.wetestlink.com/wp-content/uploads/2023/06/Untitled-1-2-1.png" class="" alt="" />
-            </div>
-            <div class="">
-                <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #ffffff;">
-                    Discover Amazing Support
-                    <br />and Opportunities from <br /> Parent Villages.
-                </h3>
-            </div>
-        </div>
-        <div class="right-side bg-white">
-            <div >
-                <form class="form" novalidate="novalidate" id="kt_login_signin_form">
-                    <!--begin::Title-->
-                    <div class="pb-13 pt-lg-0 pt-5">
-                        <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Parent
-                            Villages</h3>
-                    </div>
-                    <!--begin::Title-->
-    
-                    <input type="hidden" id="l_token" value="{{ csrf_token() }}">
-    
-                    <!--begin::Form group-->
-                    <div class="form-group">
-                        <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                        <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
-                            id="l_email" type="text" name="username" autocomplete="off" />
-                    </div>
-                    <!--end::Form group-->
-                    <!--begin::Form group-->
-                    <div class="form-group">
-                        {{-- <div class="d-flex justify-content-between mt-n5"> --}}
-                            <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
-                        {{-- </div> --}}
-                        <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
-                            type="password" id="l_password" name="password" autocomplete="off" />
-                    </div>
-                    <!--end::Form group-->
-    
-                    <!--begin::Action-->
-                    <div class="pb-lg-0 pb-5">
-                        <button type="button" id="kt_login_signin_submit"
-                            class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
-                            In</button>
-                    </div>
-                    <!--end::Action-->
-                </form>
-            </div>
-            <div class="login-footer">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                
-                <div class="text-dark-50 font-size-lg font-weight-bolder mr-10">
-                    <span class="mr-1">2023©</span>
-                    <a href="/" target="_blank" class="text-dark-75 text-hover-primary">Parent
-                        Villages</a>
-                </div>
-                <a href="#" class="text-primary font-weight-bolder font-size-lg">Terms</a>
-                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Plans</a>
-                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Contact Us</a>
-            </div>
-        </div>
-    </div>
-    {{-- <div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
         <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
             id="kt_login">
@@ -166,8 +115,7 @@
                 <!--end::Aside Top-->
                 <!--begin::Aside Bottom-->
                 <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center"
-                    style="background-image: url(/public/assets/media/login/parent-village-illustrations.png)">
-                </div>
+                    style="background-image: url('../assets/media/logos/parent-village-illustrations.png')"></div>
                 <!--end::Aside Bottom-->
             </div>
             <!--begin::Aside-->
@@ -184,10 +132,13 @@
                             <div class="pb-13 pt-lg-0 pt-5">
                                 <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Parent
                                     Villages</h3>
+                                <span class="text-muted font-weight-bold font-size-h4">New Here?
+                                    <a href="javascript:;" id="kt_login_signup"
+                                        class="text-primary font-weight-bolder">Create an Account</a></span>
                             </div>
                             <!--begin::Title-->
 
-                            <input type="hidden" id="l_token" value="{{ csrf_token() }}">
+                            <input type="hidden" id="l_token" value="VaxsumcCjECJOMOX87VAO7pP5jZWlm1ZDrOvlpWf">
 
                             <!--begin::Form group-->
                             <div class="form-group">
@@ -200,11 +151,29 @@
                             <div class="form-group">
                                 <div class="d-flex justify-content-between mt-n5">
                                     <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+                                    <a href="javascript:;"
+                                        class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
+                                        id="kt_login_forgot">Forgot Password ?</a>
                                 </div>
                                 <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
                                     type="password" id="l_password" name="password" autocomplete="off" />
                             </div>
                             <!--end::Form group-->
+
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Login as</label>
+                                <div class="col-9 col-form-label">
+                                    <div class="radio-inline">
+                                        <label class="radio radio-outline radio-primary">
+                                            <input type="radio" name="l_radio" value="client" />
+                                            <span></span>Client</label>
+                                        <label class="radio radio-outline radio-primary">
+                                            <input type="radio" name="l_radio" value="employee" />
+                                            <span></span>Employee</label>
+                                    </div>
+                                    <span class="form-text text-muted">Select whom are you logging as.</span>
+                                </div>
+                            </div>
 
                             <!--begin::Action-->
                             <div class="pb-lg-0 pb-5">
@@ -217,13 +186,124 @@
                         <!--end::Form-->
                     </div>
                     <!--end::Signin-->
+                    <!--begin::Signup-->
+                    <div class="login-form login-signup">
+                        <!--begin::Form-->
+                        <form class="form" novalidate="novalidate" id="kt_login_signup_form">
+
+                            <input type="hidden" id="r_token" value="VaxsumcCjECJOMOX87VAO7pP5jZWlm1ZDrOvlpWf">
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
+                                <p class="text-muted font-weight-bold font-size-h4">Enter your details to create your
+                                    account</p>
+                            </div>
+                            <!--end::Title-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
+                                    type="text" placeholder="Fullname" id="r_fullname" name="fullname"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
+                                    type="email" placeholder="Email" id="r_email" name="email"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
+                                    type="password" placeholder="Password" id="r_password" name="password"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
+                                    type="password" placeholder="Confirm password" name="cpassword"
+                                    autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <label class="checkbox mb-0">
+                                    <input type="checkbox" name="agree" />
+                                    <span></span>
+                                    <div class="ml-2">I Agree the
+                                        <a href="#">terms and conditions</a>.
+                                    </div>
+                                </label>
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Form group-->
+                            <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
+                                <button type="button" id="kt_login_signup_submit"
+                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
+                                <button type="button" id="kt_login_signup_cancel"
+                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
+                            </div>
+                            <!--end::Form group-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Signup-->
+                    <!--begin::Forgot-->
+                    <div class="login-form login-forgot">
+                        <!--begin::Form-->
+                        <form class="form" novalidate="novalidate" id="kt_login_forgot_form">
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Forgotten
+                                    Password ?</h3>
+                                <p class="text-muted font-weight-bold font-size-h4">Enter your email to reset your
+                                    password</p>
+                            </div>
+                            <!--end::Title-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
+                                    type="email" placeholder="Email" name="email" autocomplete="off" />
+                            </div>
+                            <!--end::Form group-->
+
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Your Role</label>
+                                <div class="col-9 col-form-label">
+                                    <div class="radio-inline">
+                                        <label class="radio radio-outline radio-primary">
+                                            <input type="radio" name="radios20" />
+                                            <span></span>Client</label>
+                                        <label class="radio radio-outline radio-primary">
+                                            <input type="radio" name="radios20" />
+                                            <span></span>Employee</label>
+                                    </div>
+                                    <span class="form-text text-muted">Select your role.</span>
+                                </div>
+                            </div>
+
+                            <!--begin::Form group-->
+                            <div class="form-group d-flex flex-wrap pb-lg-0">
+                                <button type="button" id="kt_login_forgot_submit"
+                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
+                                <button type="button" id="kt_login_forgot_cancel"
+                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
+                            </div>
+                            <!--end::Form group-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Forgot-->
                 </div>
                 <!--end::Content body-->
                 <!--begin::Content footer-->
                 <div class="d-flex justify-content-lg-start justify-content-center align-items-end py-7 py-lg-0">
                     <div class="text-dark-50 font-size-lg font-weight-bolder mr-10">
                         <span class="mr-1">2023©</span>
-                        <a href="/" target="_blank" class="text-dark-75 text-hover-primary">Parent
+                        <a href="https://zemfar.com/" target="_blank" class="text-dark-75 text-hover-primary">Parent
                             Villages</a>
                     </div>
                     <a href="#" class="text-primary font-weight-bolder font-size-lg">Terms</a>
@@ -235,10 +315,10 @@
             <!--end::Content-->
         </div>
         <!--end::Login-->
-    </div> --}}
+    </div>
     <!--end::Main-->
     <script>
-        var HOST_URL = "http://127.0.0.1:8000";
+        var HOST_URL = "https://pvportal.wetestlink.com";
     </script>
     <!--begin::Global Config(global config for global JS scripts)-->
     <script>

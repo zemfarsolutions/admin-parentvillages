@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_application_references', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_application_id')->constrained();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->text('avatar')->nullable();
-            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('relation');
+            $table->string('length');
+            $table->string('letter');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_application_references');
     }
 };
