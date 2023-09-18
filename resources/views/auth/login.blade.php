@@ -132,13 +132,10 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="pb-13 pt-lg-0 pt-5">
                                 <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Welcome to Parent
                                     Villages</h3>
-                                <span class="text-muted font-weight-bold font-size-h4">New Here?
-                                    <a href="javascript:;" id="kt_login_signup"
-                                        class="text-primary font-weight-bolder">Create an Account</a></span>
                             </div>
                             <!--begin::Title-->
 
-                            <input type="hidden" id="l_token" value="VaxsumcCjECJOMOX87VAO7pP5jZWlm1ZDrOvlpWf">
+                            <input type="hidden" id="l_token" value="{{ csrf_token() }}">
 
                             <!--begin::Form group-->
                             <div class="form-group">
@@ -149,31 +146,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!--end::Form group-->
                             <!--begin::Form group-->
                             <div class="form-group">
-                                <div class="d-flex justify-content-between mt-n5">
+                                {{-- <div class="d-flex justify-content-between mt-n5"> --}}
                                     <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
-                                    <a href="javascript:;"
-                                        class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
-                                        id="kt_login_forgot">Forgot Password ?</a>
-                                </div>
+                                {{-- </div> --}}
                                 <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg"
                                     type="password" id="l_password" name="password" autocomplete="off" />
                             </div>
                             <!--end::Form group-->
-
-                            <div class="form-group row">
-                                <label class="col-3 col-form-label">Login as</label>
-                                <div class="col-9 col-form-label">
-                                    <div class="radio-inline">
-                                        <label class="radio radio-outline radio-primary">
-                                            <input type="radio" name="l_radio" value="client" />
-                                            <span></span>Client</label>
-                                        <label class="radio radio-outline radio-primary">
-                                            <input type="radio" name="l_radio" value="employee" />
-                                            <span></span>Employee</label>
-                                    </div>
-                                    <span class="form-text text-muted">Select whom are you logging as.</span>
-                                </div>
-                            </div>
 
                             <!--begin::Action-->
                             <div class="pb-lg-0 pb-5">
@@ -186,117 +165,6 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!--end::Form-->
                     </div>
                     <!--end::Signin-->
-                    <!--begin::Signup-->
-                    <div class="login-form login-signup">
-                        <!--begin::Form-->
-                        <form class="form" novalidate="novalidate" id="kt_login_signup_form">
-
-                            <input type="hidden" id="r_token" value="VaxsumcCjECJOMOX87VAO7pP5jZWlm1ZDrOvlpWf">
-                            <!--begin::Title-->
-                            <div class="pb-13 pt-lg-0 pt-5">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
-                                <p class="text-muted font-weight-bold font-size-h4">Enter your details to create your
-                                    account</p>
-                            </div>
-                            <!--end::Title-->
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
-                                    type="text" placeholder="Fullname" id="r_fullname" name="fullname"
-                                    autocomplete="off" />
-                            </div>
-                            <!--end::Form group-->
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
-                                    type="email" placeholder="Email" id="r_email" name="email"
-                                    autocomplete="off" />
-                            </div>
-                            <!--end::Form group-->
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
-                                    type="password" placeholder="Password" id="r_password" name="password"
-                                    autocomplete="off" />
-                            </div>
-                            <!--end::Form group-->
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
-                                    type="password" placeholder="Confirm password" name="cpassword"
-                                    autocomplete="off" />
-                            </div>
-                            <!--end::Form group-->
-
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <label class="checkbox mb-0">
-                                    <input type="checkbox" name="agree" />
-                                    <span></span>
-                                    <div class="ml-2">I Agree the
-                                        <a href="#">terms and conditions</a>.
-                                    </div>
-                                </label>
-                            </div>
-                            <!--end::Form group-->
-                            <!--begin::Form group-->
-                            <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
-                                <button type="button" id="kt_login_signup_submit"
-                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-                                <button type="button" id="kt_login_signup_cancel"
-                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
-                            </div>
-                            <!--end::Form group-->
-                        </form>
-                        <!--end::Form-->
-                    </div>
-                    <!--end::Signup-->
-                    <!--begin::Forgot-->
-                    <div class="login-form login-forgot">
-                        <!--begin::Form-->
-                        <form class="form" novalidate="novalidate" id="kt_login_forgot_form">
-                            <!--begin::Title-->
-                            <div class="pb-13 pt-lg-0 pt-5">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Forgotten
-                                    Password ?</h3>
-                                <p class="text-muted font-weight-bold font-size-h4">Enter your email to reset your
-                                    password</p>
-                            </div>
-                            <!--end::Title-->
-                            <!--begin::Form group-->
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6"
-                                    type="email" placeholder="Email" name="email" autocomplete="off" />
-                            </div>
-                            <!--end::Form group-->
-
-                            <div class="form-group row">
-                                <label class="col-3 col-form-label">Your Role</label>
-                                <div class="col-9 col-form-label">
-                                    <div class="radio-inline">
-                                        <label class="radio radio-outline radio-primary">
-                                            <input type="radio" name="radios20" />
-                                            <span></span>Client</label>
-                                        <label class="radio radio-outline radio-primary">
-                                            <input type="radio" name="radios20" />
-                                            <span></span>Employee</label>
-                                    </div>
-                                    <span class="form-text text-muted">Select your role.</span>
-                                </div>
-                            </div>
-
-                            <!--begin::Form group-->
-                            <div class="form-group d-flex flex-wrap pb-lg-0">
-                                <button type="button" id="kt_login_forgot_submit"
-                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-                                <button type="button" id="kt_login_forgot_cancel"
-                                    class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
-                            </div>
-                            <!--end::Form group-->
-                        </form>
-                        <!--end::Form-->
-                    </div>
-                    <!--end::Forgot-->
                 </div>
                 <!--end::Content body-->
                 <!--begin::Content footer-->
