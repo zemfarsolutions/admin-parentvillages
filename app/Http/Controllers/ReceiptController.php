@@ -8,7 +8,8 @@ use App\Models\EmployeeReceiptImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 class ReceiptController extends Controller
 {
     public function index()
@@ -26,6 +27,10 @@ class ReceiptController extends Controller
 
     public function store(Request $request)
     {
+   
+        $current_time = Carbon::now();
+        $formatted_date = $current_time->format('Ymdhis');
+        
         $validator = Validator::make($request->all(), [
             'employee_id' => 'required',
             'date' => 'required',
@@ -39,20 +44,25 @@ class ReceiptController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
+        
         $employee_receipt = EmployeeReceipt::create([
             'employee_id' => $request->employee_id,
             'date' => date_format(date_create($request->date), "Y-m-d"),
             'place' => $request->place,
             'amount' => $request->amount
         ]);
-
+        
         if ($request->hasFile('receipt')) {
-
             for ($i = 0; $i < count($request->receipt); $i++) {
-
-                $path = $request->file('receipt')[$i]->store('receipts');
-
+                
+                $randomString = Str::random(10);
+                $fileName = $randomString . $formatted_date . '.' . $request->file('receipt')[$i]->extension();
+                
+                $request->file('receipt')[$i]->move(public_path('assets/media/admin/receipts'), $fileName);
+                
+                $path = 'assets/media/admin/receipts/' . $fileName;
+                
+                // dd($request->file('receipt')[$i]);
                 EmployeeReceiptImage::create([
                     'employee_receipt_id' => $employee_receipt->id,
                     'path' => $path

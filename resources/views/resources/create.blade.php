@@ -59,7 +59,7 @@
 
                                     <div class="col-lg-6">
                                         <label>Document:</label>
-                                        <input name="file" type="file" class="form-control" />
+                                        <input name="file" type="file" class="form-control" accept=".pdf,.docx"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">

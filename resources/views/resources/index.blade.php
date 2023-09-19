@@ -32,9 +32,9 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/admin/documents/create" target="_blank"
+                <a href="/admin/documents/create" 
                     class="btn btn-light-primary font-weight-bolder btn-sm">Add
-                    Document</a>
+                    Resource</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -116,7 +116,8 @@
                                                     <img alt="" class="max-h-65px"
                                                         src="	https://static.thenounproject.com/png/4147238-200.png" />
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'docx')
-
+                                                    <img alt="" class="max-h-65px"
+                                                        src="assets/media/misc/docx.png" />
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'jpg' || pathinfo($record->path, PATHINFO_EXTENSION) === 'jpeg')
                                                     <img alt="" class="max-h-65px"
                                                         src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />

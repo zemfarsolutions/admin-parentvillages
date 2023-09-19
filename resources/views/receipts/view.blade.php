@@ -57,7 +57,7 @@
                                 <div class="card-body">
                                     <div id="images">
                                         @foreach ($images as $image)
-                                            <img src="/storage/{{ $image->path }}" width="200px" alt="Picture 1">
+                                            <img src="/{{ $image->path }}" width="200px" alt="Picture 1">
                                         @endforeach
                                     </div>
                                 </div>

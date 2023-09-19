@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\EmployeeEvaluation;
 use App\Models\Evaluation;
 use Illuminate\Http\Request;
 
@@ -40,10 +41,10 @@ class AccessController extends Controller
         return redirect('/evaluations/accessibility/' . $evaluation->slug)->with('success', 'Access provided successfully.');
     }
 
-    public function destroy(Evaluation $evaluation)
+    public function destroy(Evaluation $evaluation,Request $request)
     {
-        $evaluation->delete();
+        EmployeeEvaluation::where('employee_id',$request->id)->delete();
 
-        return back();
+        return back()->with('success','Employee access has been removed');
     }
 }

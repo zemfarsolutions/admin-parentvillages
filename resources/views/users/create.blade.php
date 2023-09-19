@@ -53,13 +53,13 @@
                                     <div class="col-lg-6">
                                         <label>Name:</label>
                                         <input name="name" type="text" class="form-control"
-                                            placeholder="Enter name" />
+                                            placeholder="Enter name" value="{{old('name')}}"/>
                                         <span class="form-text text-muted">Please enter name</span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Email:</label>
                                         <input required name="email" type="email" class="form-control"
-                                            placeholder="Enter email address" />
+                                            placeholder="Enter email address" value="{{old('email')}}"/>
                                         <span class="form-text text-muted">Please enter email address</span>
                                     </div>
                                 </div>

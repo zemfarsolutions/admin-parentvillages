@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-toolbar">
                         <!--begin::Button-->
-                        <a href="/users/create" class="btn btn-primary font-weight-bolder">
+                        <a href="/admins/create" class="btn btn-primary font-weight-bolder">
                             <span class="svg-icon svg-icon-md">
                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -76,24 +76,6 @@
                 <!--end::Header-->
                 <!--begin::Body-->
                 <div class="card-body">
-                    {{-- <div class="row">
-                        <div class="col-md-12">
-                            <div class="row align-items-center">
-                                <div class="col-md-4 my-2 my-md-0">
-                                    <div class="d-flex align-items-center">
-                                        <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
-                                        <div class="dropdown bootstrap-select form-control dropup">
-                                            <select class="form-control" id="kt_datatable_search_status" tabindex="null">
-                                                <option value="">All</option>
-                                                <option value="Active">Active</option>
-                                                <option value="Deactivate">Deactivate</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <!--begin: Datatable-->
                     <div class="datatable datatable-bordered datatable-head-custom" id="admin_datatable"></div>
                     <!--end: Datatable-->
@@ -105,15 +87,7 @@
         <!--end::Container-->
     </div>
     <!--end::Entry-->
-    {{-- <div class="form-group row">
-        <label class="col-form-label text-right col-lg-3 col-sm-12">Basic Example</label>
-        <div class="col-lg-4 col-md-9 col-sm-12">
-            <select class="form-control select2-hidden-accessible" id="kt_select2_1" name="param" data-select2-id="kt_select2_1" tabindex="-1" aria-hidden="true">
-                <option value="WV" data-select2-id="94">West Virginia</option>
-            </select>
-            <span class="select2 select2-container select2-container--default select2-container--below select2-container--focus" dir="ltr" data-select2-id="1" style="width: 393.828px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-kt_select2_1-container"><span class="select2-selection__rendered" id="select2-kt_select2_1-container" role="textbox" aria-readonly="true" title="Alaska">Alaska</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-        </div>
-    </div> --}}
+
 @endsection
 
 @section('scripts')

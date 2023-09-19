@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('employee_id')->constrained();
             $table->integer('number_of_miles');
             $table->date('date');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

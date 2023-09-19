@@ -27,7 +27,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/admin" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
+                <a href="/admins" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -52,7 +52,7 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Name:</label>
-                                        <input name="name" type="text" class="form-control" placeholder="Enter name"  value="{{old('name')}}"/>
+                                        <input name="name" type="text" class="form-control" placeholder="Enter name" value="{{old('name')}}"/>
                                         <span class="form-text text-muted">Please enter name</span>
                                         <span class="text-danger">
                                             @error('name')

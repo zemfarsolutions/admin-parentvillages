@@ -15,9 +15,8 @@
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        <li class="text-muted">
-                            Edit Admin
-                        </li>
+                        <li class="text-muted pr-4">|</li>
+                        <li class="text-muted">Edit Admin</li>
                     </ul>
                     <!--end::Breadcrumb-->
                 </div>
@@ -71,24 +70,6 @@
                                             @enderror
                                         </span>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    @if (Auth::user()->email != $admin->email)
-                                        <div class="col-lg-6">
-                                            <label>Status:</label>
-                                            <div class="checkbox-list">
-                                                <label class="checkbox">
-                                                    <input type="radio" value="Active" name="status" required {{($admin->status) == 'Active' ? 'checked' : ''}}/>
-                                                    <span></span>Active
-                                                </label>
-                                                <label class="checkbox">
-                                                    <input type="radio" value="Inactive" name="status" required {{($admin->status) == 'Inactive' ? 'checked' : ''}}/>
-                                                    <span></span>Inactive
-                                                </label>
-                                            </div>
-                                            <span class="form-text text-muted">Please select status</span>
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
                             <div class="card-footer">

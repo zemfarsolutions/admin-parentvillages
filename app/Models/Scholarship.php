@@ -13,6 +13,7 @@ class Scholarship extends Model
     protected $fillable = [
         'admin_id',
         'title',
+        'slug',
         'short_description',
         'full_description',
         'deadline',

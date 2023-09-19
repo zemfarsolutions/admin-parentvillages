@@ -922,6 +922,7 @@
                                     <div class="col-lg-6">
                                         <label class="" for="">Signature:</label>
                                         <br />
+                                        <img src="/assets/media/client/signatures/{{ $intake->signature }}" alt="" srcset="">
                                         <div id="sig"></div>
                                         <br />
                                         <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>

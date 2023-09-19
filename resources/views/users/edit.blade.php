@@ -15,9 +15,8 @@
                     <!--end::Page Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-muted">Edit User</a>
-                        </li>
+                        <li class="text-muted pr-4">|</li>
+                        <li class="breadcrumb-item text-muted">Edit User</li>
                     </ul>
                     <!--end::Breadcrumb-->
                 </div>
@@ -56,36 +55,25 @@
                                         <input name="name" value="{{ $user->name }}" type="text"
                                             class="form-control" placeholder="Enter name" />
                                         <span class="form-text text-muted">Please enter name</span>
+                                        <span class="text-danger">
+                                            @error('name')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Email:</label>
                                         <input required name="email" value="{{ $user->email }}" type="email"
                                             class="form-control" placeholder="Enter email address" />
                                         <span class="form-text text-muted">Please enter email address</span>
+                                        <span class="text-danger">
+                                            @error('email')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-6">
-                                        <input name="password" type="password" class="form-control"
-                                            placeholder="Enter password address" />
-                                        <span class="form-text text-muted">Please enter password</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-danger">
-                                        @error('name')
-                                            {{ $message }}
-                                        @enderror
-
-                                        @error('email')
-                                            {{ $message }}
-                                        @enderror
-
-                                        @error('password')
-                                            {{ $message }}
-                                        @enderror
-                                    </div>
-                                </div>
+                              
                             </div>
                             <div class="card-footer">
                                 <div class="row">

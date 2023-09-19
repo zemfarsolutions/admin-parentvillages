@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->text('avatar')->nullable();
-            $table->enum('status', ['Active', 'Inactive'])->default('Active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

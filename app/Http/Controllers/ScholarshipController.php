@@ -6,6 +6,7 @@ use App\Models\Scholarship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class ScholarshipController extends Controller
 {
@@ -41,6 +42,7 @@ class ScholarshipController extends Controller
         Scholarship::create([
             'admin_id' => Auth::user()->id,
             'title' => $request->title,
+            'slug' =>  Str::slug($request->title),
             'short_description' => $request->short_description,
             'full_description' => $request->full_description,
             'deadline' => date_format(date_create($request->deadline), "Y-m-d"),

@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function () {
     
         Route::resource('/evaluations', EvaluationController::class)->except(['destroy']);
         Route::get('/evaluations/delete/{evaluation}', [EvaluationController::class, 'destroy']);
-        Route::get('/evaluations/accessibility/delete/{evaluation}', [AccessController::class, 'destroy']);
+        Route::POST('/evaluations/accessibility/delete/{id}', [AccessController::class, 'destroy']);
         Route::get('/evaluations/accessibility/{evaluation:slug}', [AccessController::class, 'index']);
         Route::get('/evaluations/accessibility/create/{evaluation:slug}', [AccessController::class, 'create']);
         Route::post('/evaluations/accessibility/{evaluation}', [AccessController::class, 'store']);

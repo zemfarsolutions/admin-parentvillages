@@ -38,9 +38,9 @@ class ResourceController extends Controller
 
         $fileName = Str::slug($request->name) . '.' . $request->file->extension();
 
-        $request->file->move(public_path('admin/resources'), $fileName);
+        $request->file->move(public_path('/assets/media/client/resources'), $fileName);
 
-        $path = '/admin/resources/' . $fileName;
+        $path = '/assets/media/client/resources' . $fileName;
 
         Resource::create([
             'admin_id' => Auth::user()->id,

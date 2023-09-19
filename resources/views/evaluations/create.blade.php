@@ -16,7 +16,7 @@
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
-                            <a href="/evaluation/create" class="text-muted">Add Document</a>
+                            <a href="/evaluations/create" class="text-muted">Add Document</a>
                         </li>
                     </ul>
                     <!--end::Breadcrumb-->
@@ -27,7 +27,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/employees" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
+                <a href="/evaluations" class="btn btn-light-primary font-weight-bolder btn-sm">Go Back</a>
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar-->
@@ -55,18 +55,21 @@
                                         <label>Document Name:</label>
                                         <input name="name" type="text" class="form-control" />
                                         <span class="form-text text-muted">Please enter name</span>
+                                        <div class="text-danger">
+                                            @error('name')
+                                                {{ $message }}
+                                            @enderror    
+                                        </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <label>Document:</label>
-                                        <input name="file" type="file" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-danger">
-                                        @error('name')
-                                            {{ $message }}
-                                        @enderror
+                                        <input name="file" type="file" class="form-control" accept=".pdf,.docx" />
+                                        <div class="text-danger">
+                                            @error('file')
+                                                {{ $message }}
+                                            @enderror    
+                                        </div>
                                     </div>
                                 </div>
                             </div>

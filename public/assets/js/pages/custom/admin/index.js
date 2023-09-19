@@ -42,9 +42,6 @@ var KTDatatableRecordSelectionDemo = function() {
             field: 'email',
             title: 'Email',
         },{
-            field: 'status',
-            title: 'Status'
-        },{
             field: 'Actions',
             title: 'Actions',
             sortable: false,
@@ -55,9 +52,6 @@ var KTDatatableRecordSelectionDemo = function() {
             template: function(data) {
                 return '\
                     <div class="d-flex">\
-                        <a href="/admins/'+data.id+'/view" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details">\
-                            <i class="flaticon2-document"></i>\
-                        </a>\
                         <a href="/admins/'+data.id+'/edit" class="btn btn-outline-secondary btn btn-sm btn-default btn-icon mr-2" title="Edit details">\
                             <span class="svg-icon svg-icon-md">\
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
@@ -103,9 +97,9 @@ var KTDatatableRecordSelectionDemo = function() {
 
         var datatable = $('#admin_datatable').KTDatatable(options);
 
-        // $('#kt_datatable_search_status').on('change', function() {
-        //     datatable.search($(this).val().toLowerCase(), 'status');
-        // });
+        $('#kt_datatable_search_status').on('change', function() {
+            datatable.search($(this).val().toLowerCase(), 'status');
+        });
 
         // $('#kt_datatable_search_type').on('change', function() {
         //     datatable.search($(this).val().toLowerCase(), 'Type');

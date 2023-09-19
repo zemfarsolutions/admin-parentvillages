@@ -53,14 +53,24 @@
                                     <div class="col-lg-6">
                                         <label>Name:</label>
                                         <input name="name" type="text" class="form-control"
-                                            placeholder="Enter name" />
+                                            placeholder="Enter name" value="{{old('name')}}"/>
                                         <span class="form-text text-muted">Please enter name</span>
+                                        <span class="text-danger">
+                                            @error('name')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Email:</label>
                                         <input required name="email" type="email" class="form-control"
-                                            placeholder="Enter email address" />
+                                            placeholder="Enter email address" value="{{old('email')}}"/>
                                         <span class="form-text text-muted">Please enter email address</span>
+                                        <span class="text-danger">
+                                            @error('email')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -69,21 +79,11 @@
                                         <input required name="password" type="password" class="form-control"
                                             placeholder="Enter password address" />
                                         <span class="form-text text-muted">Please enter password</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-danger">
-                                        @error('name')
-                                            {{ $message }}
-                                        @enderror
-
-                                        @error('email')
-                                            {{ $message }}
-                                        @enderror
-
-                                        @error('password')
-                                            {{ $message }}
-                                        @enderror
+                                        <span class="text-danger">
+                                            @error('password')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
                             </div>

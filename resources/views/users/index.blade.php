@@ -24,70 +24,11 @@
                     </form>
                 </div>
                 <!--end::Search Form-->
-                <!--begin::Group Actions-->
-                <div class="d-flex- align-items-center flex-wrap mr-2 d-none" id="kt_subheader_group_actions">
-                    <div class="text-dark-50 font-weight-bold">
-                        <span id="kt_subheader_group_selected_rows">23</span>Selected:
-                    </div>
-                    <div class="d-flex ml-6">
-                        <div class="dropdown mr-2" id="kt_subheader_group_actions_status_change">
-                            <button type="button" class="btn btn-light-primary font-weight-bolder btn-sm dropdown-toggle"
-                                data-toggle="dropdown">Update Status</button>
-                            <div class="dropdown-menu p-0 m-0 dropdown-menu-sm">
-                                <ul class="navi navi-hover pt-3 pb-4">
-                                    <li
-                                        class="navi-header font-weight-bolder text-uppercase text-primary font-size-lg pb-0">
-                                        Change status to:</li>
-                                    <li class="navi-item">
-                                        <a href="#" class="navi-link" data-toggle="status-change" data-status="1">
-                                            <span class="navi-text">
-                                                <span
-                                                    class="label label-light-success label-inline font-weight-bold">Approved</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="navi-item">
-                                        <a href="#" class="navi-link" data-toggle="status-change" data-status="2">
-                                            <span class="navi-text">
-                                                <span
-                                                    class="label label-light-danger label-inline font-weight-bold">Rejected</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="navi-item">
-                                        <a href="#" class="navi-link" data-toggle="status-change" data-status="3">
-                                            <span class="navi-text">
-                                                <span
-                                                    class="label label-light-warning label-inline font-weight-bold">Pending</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="navi-item">
-                                        <a href="#" class="navi-link" data-toggle="status-change" data-status="4">
-                                            <span class="navi-text">
-                                                <span class="label label-light-info label-inline font-weight-bold">On
-                                                    Hold</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <button class="btn btn-light-success font-weight-bolder btn-sm mr-2"
-                            id="kt_subheader_group_actions_fetch" data-toggle="modal"
-                            data-target="#kt_datatable_records_fetch_modal">Fetch Selected</button>
-                        <button class="btn btn-light-danger font-weight-bolder btn-sm mr-2"
-                            id="kt_subheader_group_actions_delete_all">Delete All</button>
-                    </div>
-                </div>
-                <!--end::Group Actions-->
+               
             </div>
             <!--end::Details-->
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
-                <!--begin::Button-->
-                <a href="../../../.html" class=""></a>
-                <!--end::Button-->
                 <!--begin::Button-->
                 <a href="/"
                     class="btn btn-light-primary font-weight-bold btn-sm px-4 font-size-base ml-2">Dashboard</a>
@@ -116,17 +57,14 @@
                             <span class="svg-icon svg-icon-md">
                                 <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Flatten.svg-->
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24" />
-                                        <circle fill="#000000" cx="9" cy="15" r="6" />
-                                        <path
-                                            d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z"
-                                            fill="#000000" opacity="0.3" />
-                                    </g>
-                                </svg>
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/>
+                                </g>
+                            </svg>
                                 <!--end::Svg Icon-->
-                            </span>New Record</a>
+                            </span>Add User</a>
                         <!--end::Button-->
                     </div>
                 </div>

@@ -40,9 +40,7 @@ class AdminController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'status' => 'Active',
         ];
-        // dd($admin);
         $admin->create($attributes);
         return back()->with('success','Admin has been created');
     }
@@ -70,16 +68,13 @@ class AdminController extends Controller
         $admin->update([
             'name' => $request->name,
             'email' => $request->email,
-            'status' => $request->status
         ]);
 
         return redirect()->route('admins.index')->with('success', 'Admin updated successfully.');
     }
 
     public function destroy(Admin $admin){
-        $admin->update([
-            'status' => 'Inactive',
-        ]);
+        $admin->delete();
         return redirect()->route('admins.index')->with('success','Deleted Successfully');
     }
 }
