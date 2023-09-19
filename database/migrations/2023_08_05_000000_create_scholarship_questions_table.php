@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('scholarship_questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('scholarship_id')->constrained();
             $table->string('name');
             $table->enum('type', ['service', 'event']);
             $table->timestamps();
