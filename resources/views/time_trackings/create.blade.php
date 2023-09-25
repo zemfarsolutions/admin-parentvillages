@@ -64,13 +64,13 @@
                                         <label>Date:</label>
                                         <input name="date" type="text" class="form-control" id="kt_datepicker_1"
                                             readonly="readonly" placeholder="Select date" />
-                                        <span class="form-text text-muted">Please select the date</span>
+                                        {{-- <span class="form-text text-muted">Please select the date</span> --}}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Number Of Hours:</label>
                                         <input required name="number_of_hours" type="number" class="form-control"
-                                            placeholder="Enter contact number" />
-                                        <span class="form-text text-muted">Please enter total number of hours</span>
+                                            placeholder="Enter Number of Hours" />
+                                        {{-- <span class="form-text text-muted">Please enter total number of hours</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -86,7 +86,7 @@
                                     <div class="col-lg-6">
                                         <label>Description:</label>
                                         <textarea required name="description" class="form-control" id="exampleTextarea" rows="1"></textarea>
-                                        <span class="form-text text-muted">Please enter description</span>
+                                        {{-- <span class="form-text text-muted">Please enter description</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

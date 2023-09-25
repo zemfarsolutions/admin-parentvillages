@@ -54,13 +54,13 @@
                                         <label>Name:</label>
                                         <input name="name" type="text" class="form-control"
                                             placeholder="Enter name" value="{{old('name')}}"/>
-                                        <span class="form-text text-muted">Please enter name</span>
+                                        {{-- <span class="form-text text-muted">Please enter name</span> --}}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Email:</label>
                                         <input required name="email" type="email" class="form-control"
                                             placeholder="Enter email address" value="{{old('email')}}"/>
-                                        <span class="form-text text-muted">Please enter email address</span>
+                                        {{-- <span class="form-text text-muted">Please enter email address</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -68,7 +68,7 @@
                                         <label>Password:</label>
                                         <input required name="password" type="password" class="form-control"
                                             placeholder="Enter password address" />
-                                        <span class="form-text text-muted">Please enter password</span>
+                                        {{-- <span class="form-text text-muted">Please enter password</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

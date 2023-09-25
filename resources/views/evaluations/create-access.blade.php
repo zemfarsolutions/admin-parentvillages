@@ -62,7 +62,7 @@
                                                 <option value="{{ $employee->id }}">{{ $employee->name }}</option>
                                             @endforeach
                                         </select>
-                                        <span class="form-text text-muted">Please select employee</span>
+                                        {{-- <span class="form-text text-muted">Please select employee</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

@@ -54,20 +54,20 @@
                                         <label>Title:</label>
                                         <input name="title" type="text" class="form-control"
                                             placeholder="Enter title" />
-                                        <span class="form-text text-muted">Please enter title</span>
+                                        {{-- <span class="form-text text-muted">Please enter title</span> --}}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Short Description:</label>
                                         <input required name="short_description" type="text" class="form-control"
                                             placeholder="Enter short description" />
-                                        <span class="form-text text-muted">Please enter short description</span>
+                                        {{-- <span class="form-text text-muted">Please enter short description</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-12">
                                         <label>Full Description:</label>
                                         <textarea name="full_description" class="form-control" cols="30" rows="10"></textarea>
-                                        <span class="form-text text-muted">Please enter full desciption</span>
+                                        {{-- <span class="form-text text-muted">Please enter full desciption</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -75,13 +75,13 @@
                                         <label>Due Date:</label>
                                         <input required id="kt_datepicker_1" name="deadline" type="text"
                                             class="form-control" placeholder="Enter scholarship deadline" />
-                                        <span class="form-text text-muted">Please enter deadline</span>
+                                        {{-- <span class="form-text text-muted">Please enter deadline</span> --}}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Event Date / Time:</label>
                                         <input required name="event_date" type="datetime-local" class="form-control"
                                             placeholder="Enter scholarship event date & time" />
-                                        <span class="form-text text-muted">Please enter event date & time</span>
+                                        {{-- <span class="form-text text-muted">Please enter event date & time</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

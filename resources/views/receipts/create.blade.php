@@ -65,13 +65,13 @@
                                         <label>Date:</label>
                                         <input name="date" type="text" class="form-control" id="kt_datepicker_1"
                                             readonly="readonly" placeholder="Select date" />
-                                        <span class="form-text text-muted">Please select the date</span>
+                                        {{-- <span class="form-text text-muted">Please select the date</span> --}}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Place:</label>
                                         <input required name="place" type="text" class="form-control"
                                             placeholder="Enter place name" />
-                                        <span class="form-text text-muted">Please the receipt place.</span>
+                                        {{-- <span class="form-text text-muted">Please the receipt place.</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -80,7 +80,7 @@
                                             <label for="typeSelect1">Amount:</label>
                                             <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
                                                 class="form-control" placeholder="Enter receipt amount" />
-                                            <span class="form-text text-muted">Please the receipt amount.</span>
+                                            {{-- <span class="form-text text-muted">Please the receipt amount.</span> --}}
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -90,7 +90,7 @@
                                             <input required multiple name="receipt[]" type="file" class="form-control"
                                                 placeholder="Enter receipt receipt" />
 
-                                            <span class="form-text text-muted">Please the receipt receipt.</span>
+                                            {{-- <span class="form-text text-muted">Please the receipt receipt.</span> --}}
                                         </div>
                                     </div>
                                 </div>

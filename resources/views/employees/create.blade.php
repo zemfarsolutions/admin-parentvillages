@@ -54,7 +54,7 @@
                                         <label>Name:</label>
                                         <input name="name" type="text" class="form-control"
                                             placeholder="Enter name" value="{{old('name')}}"/>
-                                        <span class="form-text text-muted">Please enter name</span>
+                                        {{-- <span class="form-text text-muted">Please enter name</span> --}}
                                         <span class="text-danger">
                                             @error('name')
                                                 {{ $message }}
@@ -65,7 +65,7 @@
                                         <label>Email:</label>
                                         <input required name="email" type="email" class="form-control"
                                             placeholder="Enter email address" value="{{old('email')}}"/>
-                                        <span class="form-text text-muted">Please enter email address</span>
+                                        {{-- <span class="form-text text-muted">Please enter email address</span> --}}
                                         <span class="text-danger">
                                             @error('email')
                                                 {{ $message }}
@@ -78,7 +78,7 @@
                                         <label>Password:</label>
                                         <input required name="password" type="password" class="form-control"
                                             placeholder="Enter password address" />
-                                        <span class="form-text text-muted">Please enter password</span>
+                                        {{-- <span class="form-text text-muted">Please enter password</span> --}}
                                         <span class="text-danger">
                                             @error('password')
                                                 {{ $message }}

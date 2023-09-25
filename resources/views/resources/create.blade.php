@@ -54,7 +54,7 @@
                                     <div class="col-lg-6">
                                         <label>Document Name:</label>
                                         <input name="name" type="text" class="form-control" />
-                                        <span class="form-text text-muted">Please enter name</span>
+                                        {{-- <span class="form-text text-muted">Please enter name</span> --}}
                                     </div>
 
                                     <div class="col-lg-6">
