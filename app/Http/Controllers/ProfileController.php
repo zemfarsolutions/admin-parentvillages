@@ -76,7 +76,9 @@ class ProfileController extends Controller
         if($request->file('profile_image') != null){
             $avatar_extension = $request->file('profile_image')->extension();
             $avatar_formated_file = $formatted_date . '-' . $user_name . '.' . $avatar_extension;
-            $avatar_store = $request->file('profile_image')->storeAs('/avatar', $avatar_formated_file, 'public');
+            $request->file('profile_image')->move(public_path('assets/media/admin/avatars'),$avatar_formated_file);
+            $avatar_store = 'assets/media/admin/avatars/' . $avatar_formated_file;
+            
         }
         
 
