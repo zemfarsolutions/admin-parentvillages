@@ -67,17 +67,20 @@
                                             readonly="readonly" placeholder="Select date" />
                                         {{-- <span class="form-text text-muted">Please select the date</span> --}}
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label>Amount:</label>
-                                        <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
-                                            class="form-control" placeholder="Enter Amount" />
-                                        {{-- <span class="form-text text-muted">Please enter total amount</span> --}}
+                                    <div class="col-lg-6 ">
+                                        <label for="amount">Amount:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-dollar-sign icon-md"></i></span></div>
+                                            <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
+                                            class="form-control numericField" placeholder="Enter Amount" />
+                                        </div>
                                     </div>
+                                   
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Name:</label>
-                                        <textarea required name="name" class="form-control" id="exampleTextarea" rows="1"></textarea>
+                                        <label>Description:</label>
+                                        <textarea required name="name" class="form-control" id="exampleTextarea" rows="5"></textarea>
                                         {{-- <span class="form-text text-muted">Please enter name</span> --}}
                                     </div>
                                 </div>

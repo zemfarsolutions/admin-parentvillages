@@ -68,15 +68,15 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Number Of Miles:</label>
-                                        <input maxlength="9" pattern="[0-9]*" required name="number_of_miles"
-                                            type="text" class="form-control" placeholder="Enter Number of Miles" />
+                                        <input maxlength="9" name="number_of_miles"
+                                            type="text" class="form-control numericField" placeholder="Enter Number of Miles" required />
                                         {{-- <span class="form-text text-muted">Please enter total number of miles</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Description:</label>
-                                        <textarea required name="description" class="form-control" id="exampleTextarea" rows="1"></textarea>
+                                        <textarea required name="description" class="form-control" id="exampleTextarea" rows="5"></textarea>
                                         {{-- <span class="form-text text-muted">Please enter description</span> --}}
                                     </div>
                                 </div>

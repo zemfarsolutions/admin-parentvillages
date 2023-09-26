@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Number Of Hours:</label>
-                                        <input required name="number_of_hours" type="number" class="form-control"
+                                        <input required name="number_of_hours" type="text" class="form-control numericField"
                                             placeholder="Enter Number of Hours" />
                                         {{-- <span class="form-text text-muted">Please enter total number of hours</span> --}}
                                     </div>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Description:</label>
-                                        <textarea required name="description" class="form-control" id="exampleTextarea" rows="1"></textarea>
+                                        <textarea required name="description" class="form-control" id="exampleTextarea" rows="5"></textarea>
                                         {{-- <span class="form-text text-muted">Please enter description</span> --}}
                                     </div>
                                 </div>

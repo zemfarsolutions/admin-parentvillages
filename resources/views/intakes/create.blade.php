@@ -87,7 +87,7 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Contact Number:</label>
-                                        <input name="phone" type="text" class="form-control"
+                                        <input name="phone" type="text" class="form-control numericField"
                                             placeholder="Enter contact number" value="{{ old('phone') }}" />
                                         <span class="form-text text-muted">Please enter your contact number</span>
                                         <span class="text-danger">
@@ -165,7 +165,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <label class="font-weight-bold"></label>
-                                        <input name="postal_code" type="text" class="form-control"
+                                        <input name="postal_code" id="" type="text" class="form-control numericField"
                                             placeholder="Enter postal / zip code" />
                                         <span class="form-text text-muted">Postal / Zip Code</span>
                                         <span class="text-danger">
@@ -871,7 +871,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Where is your location (zip code)?</label>
-                                        <input name="question_22" type="text" class="form-control"
+                                        <input name="question_22" type="text" class="form-control numericField"
                                             placeholder="Enter your location" />
                                         <span class="text-danger">
                                             @error('question_22')

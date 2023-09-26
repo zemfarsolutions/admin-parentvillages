@@ -74,13 +74,13 @@
                                         {{-- <span class="form-text text-muted">Please the receipt place.</span> --}}
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="typeSelect1">Amount:</label>
-                                            <input maxlength="9" pattern="[0-9]*" required name="amount" type="text"
-                                                class="form-control" placeholder="Enter receipt amount" />
-                                            {{-- <span class="form-text text-muted">Please the receipt amount.</span> --}}
+                                    <div class="col-lg-6 ">
+                                        <label for="amount">Amount:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-dollar-sign icon-md"></i></span></div>
+                                            <input maxlength="9" name="amount" id="amount" type="text" class="form-control numericField" placeholder="Enter receipt amount"  required />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

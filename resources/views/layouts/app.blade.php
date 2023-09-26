@@ -1473,7 +1473,7 @@
     </div>
     <!--end::Scrolltop-->
     <script>
-        var HOST_URL = "http://127.0.0.1:8080/";
+        var HOST_URL = "http://127.0.0.1:8000/";
     </script>
     <!--begin::Global Config(global config for global JS scripts)-->
     <script>
@@ -1550,7 +1550,7 @@
 
     <script src="/assets/js/pages/crud/forms/widgets/bootstrap-datepicker9cd7.js?v=7.1.5"></script>
     <script src="/assets/js/pages/apexcharts9cd7.js?v=7.1.5"></script>
-
+    <script src="/assets/js/pages/custom/number-validation/index.js"></script>
     <!--end::Page Scripts-->
     <script>
         @if (Session::has('success'))
