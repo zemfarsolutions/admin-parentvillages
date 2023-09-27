@@ -32,8 +32,7 @@
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
-                <a href="/admin/documents/create" 
-                    class="btn btn-light-primary font-weight-bolder btn-sm">Add
+                <a href="/admin/documents/create" class="btn btn-light-primary font-weight-bolder btn-sm">Add
                     Resource</a>
                 <!--end::Actions-->
             </div>
@@ -108,35 +107,58 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="d-flex flex-column align-items-center">
-                                                <!--begin: Icon-->
                                                 @if (pathinfo($record->path, PATHINFO_EXTENSION) === 'pdf')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/pdf.svg" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/download.png" />
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'png')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="	https://static.thenounproject.com/png/4147238-200.png" />
-                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'docx')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="assets/media/misc/docx.png" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/png.png" />
+                                                    </a>
+                                                @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'docx' || pathinfo($record->path, PATHINFO_EXTENSION) === 'docx')
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/docx.png" />\
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'jpg' || pathinfo($record->path, PATHINFO_EXTENSION) === 'jpeg')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/jpg.svg" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/png.png" />
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'zip')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/zip.svg" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/zip.png" />
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'psd')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="https://png.pngtree.com/png-vector/20220611/ourmid/pngtree-adobe-photoshop-psd-ps-icon-png-image_4952703.png" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/psd.png" />
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'xml')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/xml.png" />
+                                                    </a>
                                                 @elseif (pathinfo($record->path, PATHINFO_EXTENSION) === 'html')
-                                                    <img alt="" class="max-h-65px"
-                                                        src="	https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/files/html.svg" />
+                                                    <a href="{{ $record->path }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/html.png" />
+                                                    </a>
+                                                @elseif (isset($record->link))
+                                                    <a href="{{ $record->link }}" target="_blank">
+                                                        <img alt="" class="max-h-65px"
+                                                            src="/assets/media/extensions/link_icon.png" />
+                                                    </a>
                                                 @endif
                                                 <!--begin: Title-->
-                                                <a href="{{ $record->path }}" target="_blank"
-                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">{{ $record->name . '.' . pathinfo($record->path, PATHINFO_EXTENSION) }}</a>
+                                                <a href="{{ isset($record->path) ? $record->path : $record->link }}"
+                                                    target="_blank"
+                                                    class="text-dark-75 font-weight-bold mt-15 font-size-lg">
+                                                    {{ $record->name . '.' . pathinfo($record->path, PATHINFO_EXTENSION) }}
+                                                </a>
                                                 <!--end: Tite-->
                                             </div>
                                         </div>

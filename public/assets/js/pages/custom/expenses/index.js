@@ -77,14 +77,22 @@ var KTAppsUsersListDatatable = function() {
 				{
 					field: 'date',
 					title: 'Date',
+					autoHide: false,
+                    template: function(data) {
+
+                        let full_date = new Date(data.date);
+                        return full_date.toString().slice(0, 15);
+                    }
 				},
 				{
 					field: 'amount',
-					title: 'amount'
+					title: 'amount',
+					autoHide: false,
 				},
 				{
 					field: 'name',
 					title: 'name',
+					autoHide: false,
 				}, {
 					field: 'Actions',
 					title: 'Actions',

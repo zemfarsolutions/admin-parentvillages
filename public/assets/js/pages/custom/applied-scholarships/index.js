@@ -136,6 +136,11 @@ var KTAppsUsersListDatatable = function() {
 				{
 					field: 'date',
 					title: 'Date',
+                    template: function(data) {
+
+                        let full_date = new Date(data.date);
+                        return full_date.toString().slice(0, 15);
+                    }
 				},
 				{
 					field: 'scholarship.short_description',

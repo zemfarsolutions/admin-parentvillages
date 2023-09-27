@@ -63,8 +63,8 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Name:</label>
-                                        <input name="name" type="text" class="form-control"
-                                            placeholder="Enter first name" />
+                                        <input name="name" type="text" value="{{ old('name') }}"
+                                            class="form-control" placeholder="Enter first name" />
                                         <span class="form-text text-muted">Please enter your first name</span>
                                         <span class="text-danger">
                                             @error('name')
@@ -74,8 +74,8 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Email:</label>
-                                        <input name="email" type="email" class="form-control"
-                                            placeholder="Enter your email address" />
+                                        <input name="email" type="email" value="{{ old('email') }}"
+                                            class="form-control" placeholder="Enter your email address" />
                                         <span class="form-text text-muted">Please enter your email address</span>
                                         <span class="text-danger">
                                             @error('email')
@@ -122,7 +122,7 @@
                                     <div class="col-lg-12">
                                         <label class="font-weight-bold">Address:</label>
                                         <input name="address_1" type="text" class="form-control"
-                                            placeholder="Enter your street address" />
+                                            placeholder="Enter your street address" value="{{ old('address_1') }}" />
                                         <span class="form-text text-muted">Street Address</span>
                                         <span class="text-danger">
                                             @error('address_1')
@@ -133,7 +133,7 @@
                                     <div class="col-lg-12">
                                         <label class="font-weight-bold"></label>
                                         <input name="address_2" type="text" class="form-control"
-                                            placeholder="Enter street address line 2" />
+                                            placeholder="Enter street address line 2" value="{{ old('address_2') }}" />
                                         <span class="form-text text-muted">Street Address Line 2</span>
                                         <span class="text-danger">
                                             @error('address_2')
@@ -144,7 +144,7 @@
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold"></label>
                                         <input name="city" type="text" class="form-control"
-                                            placeholder="Enter your city" />
+                                            placeholder="Enter your city" value="{{ old('city') }}" />
                                         <span class="form-text text-muted">City</span>
                                         <span class="text-danger">
                                             @error('city')
@@ -155,7 +155,7 @@
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold"></label>
                                         <input name="state" type="text" class="form-control"
-                                            placeholder="Enter state / province" />
+                                            placeholder="Enter state / province" value="{{ old('state') }}" />
                                         <span class="form-text text-muted">State / Province</span>
                                         <span class="text-danger">
                                             @error('state')
@@ -165,7 +165,8 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <label class="font-weight-bold"></label>
-                                        <input name="postal_code" id="" type="text" class="form-control numericField"
+                                        <input name="postal_code" id="" type="text"
+                                            class="form-control numericField" value="{{ old('postal_code') }}"
                                             placeholder="Enter postal / zip code" />
                                         <span class="form-text text-muted">Postal / Zip Code</span>
                                         <span class="text-danger">
@@ -178,8 +179,9 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">How did you hear about us?</label>
-                                        <input name="question_2" question="How did you hear about us?" type="text"
-                                            class="form-control" placeholder="Enter reference" />
+                                        <input name="question_2" value="{{ old('question_2') }}"
+                                            question="How did you hear about us?" type="text" class="form-control"
+                                            placeholder="Enter reference" />
                                         <span class="form-text text-muted">Please enter how did you hear about us?</span>
                                         <span class="text-danger">
                                             @error('question_2')
@@ -263,8 +265,8 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">What is your primary language?</label>
-                                        <input type="text" name="language" class="form-control"
-                                            placeholder="Enter first name" />
+                                        <input type="text" value="{{ old('language') }}" name="language"
+                                            class="form-control" placeholder="Enter first name" />
                                         <span class="text-danger">
                                             @error('language')
                                                 {{ $message }}
@@ -760,7 +762,7 @@
                                             for?</label>
 
                                         <input type="text" name="question_16" class="form-control"
-                                            placeholder="Enter number of childrens" />
+                                            placeholder="Enter number of childrens" value="{{ old('question_16') }}" />
                                         <span class="text-danger">
                                             @error('question_16')
                                                 {{ $message }}
@@ -838,7 +840,7 @@
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">What is/are the age(s)?</label>
                                         <input type="text" name="question_19" class="form-control"
-                                            placeholder="Enter age" />
+                                            placeholder="Enter age" value="{{ old('question_19') }}" />
                                         <span class="text-danger">
                                             @error('question_19')
                                                 {{ $message }}
@@ -849,7 +851,7 @@
                                         <label class="font-weight-bold">Would you like to share any additional
                                             information?</label>
                                         <textarea name="question_20" class="form-control" cols="30" rows="1"
-                                            placeholder="Enter additional information"></textarea>
+                                            placeholder="Enter additional information">{{ old('question_20') }}</textarea>
                                         <span class="text-danger">
                                             @error('question_20')
                                                 {{ $message }}
@@ -862,7 +864,7 @@
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">If you have a program(s) in mind, please list them
                                             below.</label>
-                                        <textarea name="question_21" class="form-control" cols="30" rows="1" placeholder="List here"></textarea>
+                                        <textarea name="question_21" class="form-control" cols="30" rows="1" placeholder="List here">{{ old('question_21') }}</textarea>
                                         <span class="text-danger">
                                             @error('question_21')
                                                 {{ $message }}
@@ -871,8 +873,8 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Where is your location (zip code)?</label>
-                                        <input name="question_22" type="text" class="form-control numericField"
-                                            placeholder="Enter your location" />
+                                        <input name="question_22" value="{{ old('question_22') }}" type="text"
+                                            class="form-control numericField" placeholder="Enter your location" />
                                         <span class="text-danger">
                                             @error('question_22')
                                                 {{ $message }}
@@ -952,7 +954,7 @@
                                         <label class="font-weight-bold">How many hours per day will you need childcare?
                                             What time(s) of the day?</label>
                                         <input type="text" name="question_25" class="form-control"
-                                            placeholder="Enter hours" />
+                                            value="{{ old('question_25') }}" placeholder="Enter hours" />
                                         <span class="text-danger">
                                             @error('question_25')
                                                 {{ $message }}
@@ -977,16 +979,14 @@
                                                 @enderror
                                             </span>
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="font-weight-bold">Would you like to add any other information
                                             regarding childcare?</label>
                                         <input type="text" name="question_27" class="form-control"
-                                            placeholder="Enter information" />
+                                            placeholder="Enter information" value="{{ old('question_27') }}" />
                                         <span class="text-danger">
                                             @error('question_27')
                                                 {{ $message }}

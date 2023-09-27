@@ -59,7 +59,13 @@
 
                                     <div class="col-lg-6">
                                         <label>Document:</label>
-                                        <input name="file" type="file" class="form-control" accept=".pdf,.docx"/>
+                                        <input name="file" type="file" class="form-control" accept=".pdf,.docx" />
+                                    </div>
+
+                                    <div class="col-lg-6 mt-4">
+                                        <label>Document Link:</label>
+                                        <input name="link" type="text" class="form-control" />
+                                        {{-- <span class="form-text text-muted">Please enter name</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

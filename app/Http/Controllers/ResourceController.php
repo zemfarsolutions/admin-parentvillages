@@ -26,9 +26,12 @@ class ResourceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'file' => 'required',
+            'name' => 'required'
         ]);
+
+        if (!isset($request->file) && !isset($request->link)) {
+            return back()->with('error', 'Please Provide any one of field (File / Link).');
+        }
 
         $check = Resource::where('name', $request->name)->first();
 
@@ -36,18 +39,30 @@ class ResourceController extends Controller
             return back()->with('error', 'There is already a file with the same name on this location');
         }
 
-        $fileName = Str::slug($request->name) . '.' . $request->file->extension();
+        if (isset($request->file)) {
 
-        $request->file->move(public_path('/assets/media/client/resources'), $fileName);
+            $fileName = Str::slug($request->name) . '.' . $request->file->extension();
 
-        $path = '/assets/media/client/resources' . $fileName;
+            $request->file->move(public_path('/assets/media/client/resources'), $fileName);
 
-        Resource::create([
-            'admin_id' => Auth::user()->id,
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'path' => $path
-        ]);
+            $path = '/assets/media/client/resources/' . $fileName;
+
+            Resource::create([
+                'admin_id' => Auth::user()->id,
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                'path' => $path
+            ]);
+        } else {
+
+            Resource::create([
+                'admin_id' => Auth::user()->id,
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                'link' => $request->link
+            ]);
+        }
+
 
         return redirect()->route('documents.index')->with('success', 'Resource uploaded successfully.');
     }

@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class EmployeeTimeTracking extends Model
 {
@@ -17,7 +20,8 @@ class EmployeeTimeTracking extends Model
         'description'
     ];
 
-    public function employee() {
+    public function employee()
+    {
         return $this->belongsTo(Employee::class, 'employee_id', 'id');
     }
 }

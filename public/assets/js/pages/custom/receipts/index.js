@@ -41,10 +41,6 @@ var KTAppsUsersListDatatable = function() {
 
 			// columns definition
 			columns: [
-				{
-					field: 'id',
-					title: 'Record ID',
-				},
                 {
 					field: 'employee.name',
 					title: 'Employee',
@@ -77,6 +73,11 @@ var KTAppsUsersListDatatable = function() {
 				{
 					field: 'date',
 					title: 'Date',
+                    template: function(data) {
+
+                        let full_date = new Date(data.date);
+                        return full_date.toString().slice(0, 15);
+                    }
 				},
 				{
 					field: 'amount',
@@ -128,7 +129,6 @@ var KTAppsUsersListDatatable = function() {
 				}],
 		});
 
-		console.log(datatable);
 		$('#kt_datatable_search_status').on('change', function() {
 			datatable.search($(this).val().toLowerCase(), 'Status');
 		});

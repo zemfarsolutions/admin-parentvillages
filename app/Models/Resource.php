@@ -13,7 +13,8 @@ class Resource extends Model
         'admin_id',
         'name',
         'slug',
-        'path'
+        'path',
+        'link'
     ];
 
     public function reviews()

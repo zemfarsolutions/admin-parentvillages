@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('admin_id')->constrained();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('path');
+            $table->string('path')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
