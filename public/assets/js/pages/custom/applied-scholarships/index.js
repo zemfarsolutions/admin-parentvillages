@@ -14,8 +14,10 @@ var KTAppsUsersListDatatable = function() {
 					read: {
 						url: HOST_URL + 'api/get-applied-scholarships',
 						method: 'GET'
+						
 					},
 				},
+
 				pageSize: 10, // display 20 records per page
 				serverPaging: true,
 				serverFiltering: true,
@@ -42,15 +44,15 @@ var KTAppsUsersListDatatable = function() {
 			// columns definition
 			columns: [
 				{
-					field: 'scholarship_id',
+					field: 'scholarship.title',
 					title: 'Scholarship Id',
 				},
                 {
 					field: 'user.name',
 					title: 'Client Name',
 					width: 250,
+					
 					template: function(data) {
-
 						var stateNo = KTUtil.getRandomInt(0, 7);
 						var states = [
 							'success',
@@ -110,6 +112,46 @@ var KTAppsUsersListDatatable = function() {
 					title: 'phone',
 				},
 				{
+					field: 'status',
+					title: 'status',
+					template: function(row) {
+
+						let index = null
+
+						if (row.status == 'pending') {
+							
+							index = 1;
+
+						}else if (row.status == 'reject') {
+							
+							index = 2;
+
+						}else if (row.status == 'accept') {
+							
+							index = 3;
+
+						}else{
+							index = 0;
+						}
+
+						var values = {
+							1: {
+								'title': 'Pending',
+								'class': ' label-light-primary'
+							},
+							2: {
+								'title': 'Reject',
+								'class': ' label-light-danger'
+							},
+							3: {
+								'title': 'Accept',
+								'class': ' label-light-success'
+							},
+						};
+						return '<span class="label font-weight-bold label-lg ' + values[index].class + ' label-inline">' + values[index].title + '</span>';
+					},
+				},
+				{
 					field: 'appartment',
 					title: 'Street Address',
 				},
@@ -156,6 +198,12 @@ var KTAppsUsersListDatatable = function() {
 					template: function(data) {
 						return '\
                             <div class="d-flex">\
+								<a href="/scholarship-applications/'+data.slug+'/accept" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Accept Application">\
+                                    <i class="flaticon2-check-mark icon-sm"></i>\
+                                </a>\
+								<a href="/scholarship-applications/'+data.slug+'/reject" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Reject application">\
+                                    <i class="flaticon2-cross icon-sm"></i>\
+                                </a>\
                                 <a href="/applicants/'+data.slug+'/view" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details">\
                                     <i class="flaticon2-document"></i>\
                                 </a>\

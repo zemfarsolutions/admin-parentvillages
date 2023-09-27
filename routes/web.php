@@ -92,8 +92,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/scholarships', ScholarshipController::class)->except(['destroy']);
     Route::get('/scholarships/{scholarship}/delete', [ScholarshipController::class, 'destroy']);
     
-    Route::get('/scholarship-applications/{userApplication}/accept', [AppliedScholarshipController::class, 'acceptStatus']);
-    Route::get('/scholarship-applications/{userApplication}/reject', [AppliedScholarshipController::class, 'rejectStatus']);
+    Route::get('/scholarship-applications/{userApplication:slug}/accept', [AppliedScholarshipController::class, 'acceptStatus']);
+    Route::get('/scholarship-applications/{userApplication:slug}/reject', [AppliedScholarshipController::class, 'rejectStatus']);
 
     Route::resource('/applicants', AppliedScholarshipController::class)->except(['show']);
     Route::get('/applicants/{userapplication:slug}/view', [AppliedScholarshipController::class, 'show']);
