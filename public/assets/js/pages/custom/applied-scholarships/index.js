@@ -196,19 +196,29 @@ var KTAppsUsersListDatatable = function() {
 					overflow: 'visible',
 					autoHide: false,
 					template: function(data) {
-						return '\
-                            <div class="d-flex">\
-								<a href="/scholarship-applications/'+data.slug+'/accept" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Accept Application">\
-                                    <i class="flaticon2-check-mark icon-sm"></i>\
-                                </a>\
-								<a href="/scholarship-applications/'+data.slug+'/reject" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Reject application">\
-                                    <i class="flaticon2-cross icon-sm"></i>\
-                                </a>\
-                                <a href="/applicants/'+data.slug+'/view" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Edit details">\
-                                    <i class="flaticon2-document"></i>\
-                                </a>\
-                            </div>\
-	                    ';
+						var acceptHref = '<a href="/scholarship-applications/'+data.slug+'/accept" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Accept Application">\
+												<i class="flaticon2-check-mark icon-sm"></i>\
+											</a>\
+											';
+						var rejectHref = '<a href="/scholarship-applications/'+data.slug+'/reject" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Reject application">\
+											<i class="flaticon2-cross icon-sm"></i>\
+											</a>\
+											';
+						var viewHref = '<a href="/applicants/'+data.slug+'/view" class="btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="View details">\
+											<i class="flaticon2-document"></i>\
+										</a>\
+										' ;
+						var div = '';
+						if(data.status == "accept" ){
+							div = '<div class="d-flex">'+rejectHref+viewHref+'</div>';
+						}
+						else if(data.status == "reject"){
+							div = '<div class="d-flex">'+acceptHref+viewHref+'</div>';
+						}
+						else{
+							div = '<div class="d-flex">'+acceptHref+rejectHref+viewHref+'</div>';
+						}
+						return div;
 					},
 			}],
 		});
