@@ -60,7 +60,10 @@ Route::middleware('auth')->group(function () {
     // Employee Mangement Routes Start
     
         Route::resource('/employees', EmployeeController::class)->except(['destroy']);
-        Route::post('/employees/delete/{employee}', [EmployeeController::class, 'destroy']);
+        // Route::post('/employees/delete/{employee}', [EmployeeController::class, 'destroy']);
+
+        Route::get('/employees/{employee}/active', [EmployeeController::class, 'activeStatus']);
+        Route::get('/employees/{employee}/deactive', [EmployeeController::class, 'deactiveStatus']);
 
         Route::resource('/time-trackings', TimeTrackingController::class)->except(['destroy']);
         Route::post('/time-trackings/delete/{time_tracking}', [TimeTrackingController::class, 'destroy']);

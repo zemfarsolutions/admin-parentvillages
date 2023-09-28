@@ -86,4 +86,18 @@ class EmployeeController extends Controller
 
         return back()->with('error', 'Employee deleted successfully.');
     }
+
+    public function activeStatus(Employee $employee){
+        
+        $employee->update([
+            'status' => 'active'
+        ]);
+        return back()->with('success','Employee in now active');
+    }
+    public function deactiveStatus(Employee $employee){
+        $employee->update([
+            'status' => 'deactive'
+        ]);
+        return back()->with('success','Employee in now deactive');
+    }
 }
