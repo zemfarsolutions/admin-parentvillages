@@ -77,4 +77,18 @@ class AdminController extends Controller
         $admin->delete();
         return redirect()->route('admins.index')->with('success','Deleted Successfully');
     }
+
+    public function activeStatus(Admin $admin){
+        
+        $admin->update([
+            'status' => 'active'
+        ]);
+        return back()->with('success','Admin in now active');
+    }
+    public function deactiveStatus(Admin $admin){
+        $admin->update([
+            'status' => 'deactive'
+        ]);
+        return back()->with('success','Admin in now deactive');
+    }
 }

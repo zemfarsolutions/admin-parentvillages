@@ -121,11 +121,11 @@ var KTAppsUsersListDatatable = function() {
 					overflow: 'visible',
 					autoHide: false,
 					template: function(data) {
-						var activeHref = '<a href="/employees/'+data.id+'/active" class=" btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Active User">\
+						var activeHref = '<a href="/employees/'+data.id+'/active" class=" btn btn-sm btn-outline-primary btn-text-primary btn-hover-primary btn-icon mr-2" title="Active Employee">\
 												<i class="fas fa-user-check icon-sm"></i>\
 											</a>\
 											';
-						var deactiveHref = '<a href="/employees/'+data.id+'/deactive" class=" btn btn-sm btn-outline-danger btn-text-deactive btn-hover-deactive btn-icon mr-2" title="Deactive User">\
+						var deactiveHref = '<a href="/employees/'+data.id+'/deactive" class=" btn btn-sm btn-outline-danger btn-text-deactive btn-hover-deactive btn-icon mr-2" title="Deactive Employee">\
 												<i class="fas fa-user-slash icon-sm"></i>\
 											</a>\
 											';
@@ -141,7 +141,7 @@ var KTAppsUsersListDatatable = function() {
 											</span>\
 										</a>\
 										' ;
-						var detailHref = '<a href="/employees/'+data.id+'/edit" class="btn btn-sm btn-outline-secondary btn-text-primary btn-hover-secondary btn-icon mr-2" title="View User Documents">\
+						var detailHref = '<a href="/employees/'+data.id+'/edit" class="btn btn-sm btn-outline-secondary btn-text-primary btn-hover-secondary btn-icon mr-2" title="View Employee Documents">\
 											<span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2020-10-29-133027/theme/html/demo1/dist/../src/media/svg/icons/Files/User-folder.svg-->\
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\

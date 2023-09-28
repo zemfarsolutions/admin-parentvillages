@@ -77,7 +77,8 @@
                 <!--begin::Body-->
                 <div class="card-body">
                     <!--begin: Datatable-->
-                    <div class="datatable datatable-bordered datatable-head-custom" id="admin_datatable"></div>
+                    <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+
                     <!--end: Datatable-->
                 </div>
                 <!--end::Body-->

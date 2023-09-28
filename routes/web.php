@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/admins/{admin}/view', [AdminController::class, 'view']);
         Route::post('/admins/{admin}/delete', [AdminController::class, 'destroy']);
 
+        Route::get('/admins/{admin}/active', [AdminController::class, 'activeStatus']);
+        Route::get('/admins/{admin}/deactive', [AdminController::class, 'deactiveStatus']);
 
     // Admin Mangement Routes End
 
