@@ -94,4 +94,18 @@ class UserController extends Controller
 
         return back()->with('error', 'User deleted successfully.');
     }
+
+    public function activeStatus(User $user){
+        
+        $user->update([
+            'status' => 'active'
+        ]);
+        return back()->with('success','User in now active');
+    }
+    public function deactiveStatus(User $user){
+        $user->update([
+            'status' => 'deactive'
+        ]);
+        return back()->with('success','User in now deactive');
+    }
 }

@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'email' => 'client@parentvillages.org',
             'password' => '$2y$10$aXGq1MbMWDotUBDGYby4cu5LRkbB3RLN6dXoXMo.tPgIamL1A63T2',
             'avatar' => '../assets/media/client/avatars/male.png',
+            'status' => 'active',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];

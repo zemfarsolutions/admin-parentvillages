@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->text('avatar')->nullable();
+            $table->enum('status',['active','deactive']);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -102,7 +102,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/appointments/delete/{appointment}', [AppointmentController::class, 'destroy']);
 
     Route::resource('/users', UserController::class)->except(['destroy']);
-    Route::post('/users/delete/{user}', [UserController::class, 'destroy']);
+    // Route::post('/users/delete/{user}', [UserController::class, 'destroy']);
+
+    Route::get('/users/{user}/active', [UserController::class, 'activeStatus']);
+    Route::get('/users/{user}/deactive', [UserController::class, 'deactiveStatus']);
 
     Route::resource('/admin/documents', ResourceController::class)->except(['destroy']);
     Route::get('/admin/documents/reviews/create/{document}', [ResourceController::class, 'showCreateForm']);
